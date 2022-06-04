@@ -25,11 +25,11 @@
     font-size: 2.625rem;
     color: #373636;
 }
-
-.navbar .nav_links ul li.active a {
-    color: rgb(89, 89, 89); /*a changer*/
+/* *******************class active changement de lien************* */
+/* .navbar .nav_links ul li.active a {
+    color: rgb(89, 89, 89); 
     font-weight: 600;
-}
+} */
 
 .navbar a{
     color: #373636;
@@ -126,6 +126,8 @@
     .nav_links ul {
         flex-direction: column;
         align-items: center;
+        box-sizing: border-box;
+        padding-top: 3.125rem;
     }
 
     .nav_links {
@@ -163,6 +165,8 @@
     .navbar .logo{
         font-size: 1.875rem;
         margin-left: .9375rem;
+        box-sizing: border-box;
+        padding-top: 10px;
 
 }
 }
