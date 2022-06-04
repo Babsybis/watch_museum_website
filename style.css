@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0; 
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* ******HEADER******** */
+.navbar{
+    padding: 0 1.875rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.navbar .nav_links ul{
+    display: flex;
+
+}
+
+.navbar .nav_links ul li{
+    margin: 0 1.5625rem;
+    font-style: italic;
+    font-size: 2.625rem;
+    color: #373636;
+}
+
+.navbar .nav_links ul li.active a {
+    color: rgb(89, 89, 89); /*a changer*/
+    font-weight: 600;
+}
+
+.navbar a{
+    color: #373636;
+}
+
+/* *********LOGO*********** */
+.navbar span{
+    text-transform: none;
+    font-size: 6.25rem ;
+    color: #000000;
+}
+.navbar .logo{
+    font-family: 'STIX Two Text', serif;
+    font-size: 3.125rem;
+    font-style: italic;
+    color: #9E9E9E;
+    text-transform: uppercase;
+}
+
+/* ****************MENU HAMBURGER************* */
+.navbar .menu_hamburger {
+    display: none;
+}
+
+.burger {
+    width: 2.625rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    margin-right: 1.25rem;
+}
+
+.burger span{
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    display: block;
+    position: absolute;
+    top: 50%; 
+    transform: (-50%);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.burger span::before, .burger span::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    transition: transform 0.5s ease-in-out;
+}
+.burger span::before{
+    transform: translateY(-10px);
+}
+
+.burger span::after{
+    transform: translateY(10px);
+}
+
+.burger.active span{
+    background-color: transparent;
+}
+
+.burger.active span::before{
+    transform: translateY(0px) rotateZ(45deg);
+}
+
+.burger.active span::after{
+    transform: translateY(0px) rotateZ(-45deg);
+}
+
+/* ********************MUSEUM************************** */
+.museum{
+    width: 100vw;
+    background-image: url(images/musee.jpg);
+    background-size: cover;
+    height: calc(100vh - 120px);
+}
+
+
+@media screen  and (max-width: 500px){
+    .navbar .menu_hamburger{
+        display: block;
+    } 
+
+    .navbar{
+        padding: 0;
+    }
+
+    .nav_links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav_links {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.5); /*a modifier*/
+        backdrop-filter: blur(.4375rem); /*ne fonctionne pas*/
+        width: 100%;
+        height: 100vh;
+        top: 85px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; 
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+  .mobile_menu{
+        margin-left: 0;
+    }
+
+
+    .navbar .nav_links ul li{
+        font-size: 1.875rem;
+        padding-top: 20px;
+    }
+
+    /* *********LOGO*********** */
+    .museum{
+        height: calc(100vh - 84px);
+    }
+    .navbar span{
+        font-size: 4.375rem ;
+}
+    .navbar .logo{
+        font-size: 1.875rem;
+}
+}
