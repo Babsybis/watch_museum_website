@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
 *{
     margin: 0;
     padding: 0; 
@@ -6,7 +7,7 @@
     box-sizing: border-box;
 }
 
-/* ******HEADER******** */
+/********************HEADER*********************/
 .navbar{
     padding: 0 1.875rem;
     display: flex;
@@ -25,7 +26,7 @@
     font-size: 2.625rem;
     color: #373636;
 }
-/* *******************class active changement de lien************* */
+/* *******************CHANGEMENT DE LIEN************* */
 /* .navbar .nav_links ul li.active a {
     color: rgb(89, 89, 89); 
     font-weight: 600;
@@ -93,10 +94,12 @@
     transform: translateY(10px);
 }
 
+/* ************POUR ENLEVER BARRE DU MILIEU***************** */
 .burger.active span{
     background-color: transparent;
 }
 
+/* ********************POUR LA CROIX*********************** */
 .burger.active span::before{
     transform: translateY(0px) rotateZ(45deg);
 }
@@ -111,8 +114,26 @@
     background-image: url(images/musee.jpg);
     background-size: cover;
     height: calc(100vh - 100px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border-top: solid 1px #373636ed;
 }
 
+h1{
+    font-family: 'Overlock', cursive;
+    font-size: 6.25rem;
+    margin: 0;
+    text-align: right;
+    color: #ffffff;
+    padding-right: 6.25rem;
+    padding-bottom: 4.6875rem;
+/* **********POUR REMPLIR LES LETTRES EN OR************* */
+    background-clip: text;
+    background-image: url(images/or.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
 
 @media screen  and (max-width: 500px){
     .navbar .menu_hamburger{
@@ -123,6 +144,7 @@
         padding: 0;
     }
 
+    /* ************POUR LE MENU DEROULANT*********** */
     .nav_links ul {
         flex-direction: column;
         align-items: center;
@@ -132,7 +154,7 @@
 
     .nav_links {
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.5); /*a modifier*/
+        background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
         backdrop-filter: blur(.4375rem); /*ne fonctionne pas*/
         width: 100%;
         height: 100vh;
@@ -155,18 +177,36 @@
         padding-top: 20px;
     }
 
+    .navbar .nav_links ul li:hover{
+        background-color: hsla(0, 0%, 0%, 0.431);;
+        width: 100vw;
+        text-align: center;
+        padding-bottom: .625rem;
+        
+    }
+
+    .navbar .nav_links ul li a:hover{
+        color:#ffffff
+    }
+
     /* *********LOGO*********** */
     .museum{
         height: calc(100vh - 64px);
     }
     .navbar span{
         font-size: 4.375rem ;
-}
+    }
     .navbar .logo{
         font-size: 1.875rem;
         margin-left: .9375rem;
         box-sizing: border-box;
         padding-top: 10px;
+    }
 
-}
+    h1{
+        font-size: 3.125rem;
+        margin: 0;
+        padding-bottom: 15.625rem;
+        padding-right: 1.25rem; 
+    }
 }
