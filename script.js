@@ -1,3 +1,4 @@
+
 // //****************MENU BURGER****************
 const menuHamburger = document.querySelector(".menu_hamburger")
 const navLinks = document.querySelector(".nav_links")
@@ -13,3 +14,6 @@ const burger = document.querySelector('.burger');
 burger.addEventListener('click', ()=> {
     burger.classList.toggle('active');
 });
+
+
+// **********************DIAPO*****************************
