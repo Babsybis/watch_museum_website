@@ -5,6 +5,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    color:white;
 }
 
 /********************HEADER*********************/
@@ -136,18 +137,36 @@ h1{
 }
 
 /* **********************SECTION DIAPO********************** */
+#pagecontent{
+    background-image: url(images/diapo_1.jpg);
+    width: calc(100vw - 2.75rem);
+    height: 50vw;
+    background-size: cover;
+    border-radius: .625rem;
+    margin: 3.75rem 1.375rem;  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
-
+#pictinfo{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+ 
+    justify-content: center;
+    box-sizing: border-box;
+    padding-right: 40px;    
+}
 /* *******************************CHEVRON************************* */
-.bouton{
+/* .bouton{
     position: absolute;
     width: 4.375rem;
     cursor: pointer;
-    top: 25rem;
+    top: 100rem;
 }
 
 #g{
-    left: 0;
+    left: .9375rem;
     opacity: 0.4;
     transform: rotate(0deg);
     transition: all 0.3s ease;
@@ -170,8 +189,8 @@ h1{
     transform: rotate(180deg) scale(1,1);
     opacity: 1;
     transition: all 0.3s ease;
-}
-
+} */
+/* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 500px){
     .navbar .menu_hamburger{
         display: block;
