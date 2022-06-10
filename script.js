@@ -69,9 +69,12 @@ document.body.onload = function (){
 let i=1
    d.onclick=function (){
          if (i==4){i=4}else{i=i+1}
-
+         //POUR LA TRANSITION IMAGES
+        //  setTimeout(() => {
+        //     images[i].classList.add('show');
+        // }, 300)
         console.log(i)
-        document.querySelector(".photo").style.backgroundImage=`url("images/im`+i+`.jpg")`;
+        document.querySelector(".photo").style.backgroundImage=`url("images/img`+i+`.jpg")`;
         document.querySelector("#pictinfo h2").textContent=images[i-1].name;
         document.querySelector("#pictinfo p").textContent=images[i-1].author;
         document.querySelector("#pictinfo a").textContent=images[i-1].exposure;
@@ -82,7 +85,7 @@ let i=1
             if (i==1){i=1}else{i=i-1}
         
             console.log(i)
-            document.querySelector(".photo").style.backgroundImage=`url("images/im`+i+`.jpg")`;
+            document.querySelector(".photo").style.backgroundImage=`url("images/img`+i+`.jpg")`;
             document.querySelector("#pictinfo h2").textContent=images[i-1].name;
             document.querySelector("#pictinfo p").textContent=images[i-1].author;
             document.querySelector("#pictinfo a").textContent=images[i-1].exposure;
