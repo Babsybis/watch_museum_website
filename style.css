@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
     margin: 0;
     padding: 0; 
@@ -181,8 +182,9 @@ h1{
     display: inline-block;
     background-repeat: no-repeat;
     background-size: cover;
-
+    transition: 0.2s ease-in-out;
 }
+
 
 #pictinfo{
     grid-column: 2;
@@ -205,6 +207,7 @@ h2 {
 p{
     font-family: 'STIX Two Text', serif; 
     line-height: 1.375rem;
+    margin-bottom: 1.875rem;
   
 }
 
@@ -214,6 +217,10 @@ p{
     font-size: 1.875rem;
 
 }
+
+/*******************************************************************************************************
+***********************************************************************************************************
+****************************MANQUE CADRAN SOLAIRE**********************************************************/
 
 
 /* *******************************CHEVRON************************* */
@@ -250,6 +257,57 @@ p{
     transition: all 0.3s ease;
 }
 
+/* *************************SECTION CROQUIS****************************** */
+.croquis{
+    display: flex;
+}
+
+.contain {
+    border: solid 1px #615947;
+    margin: 3.75rem 1.375rem; 
+    border-radius: .625rem;
+    display: flex;
+    width: 100vw;
+    height: 43.75rem;
+    justify-content: space-evenly;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.position1, .position3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.position2, .position4{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.bloc{
+    border: solid 1px #615947;
+    border-radius: .625rem;
+    padding-left:  2.625rem;
+    padding-right: 2.625rem;
+    padding-bottom: 1.25rem;  
+}
+
+.contain p{
+    width: 230px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color:#000000;
+}
+
+/* section map */
+.contact{
+    margin-top: 3.75rem;
+}
+
 
 /* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 500px){
@@ -274,8 +332,8 @@ p{
         background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
         backdrop-filter: blur(.4375rem); /*ne fonctionne pas*/
         width: 100%;
-        height: 48vh;
-        top: 70px;
+        height: 50vh;
+        top: 4.375rem;
         left: 0;
         display: flex;
         justify-content: center;
@@ -335,9 +393,9 @@ p{
      /* *********2EME SECTION*********** */
      #pagecontent {
         margin: .9375rem;
-        position: absolute;
+        position: static;
         grid-template-rows: 0.50fr 0.50fr;
-        height: 100vh;
+        height: 110vh;
 
     }
 
@@ -360,15 +418,20 @@ p{
         grid-column: 1/3;
         padding: .9375rem;
         justify-content: unset;
-        height: 28.125rem;
+        height: 31.25rem;
         justify-content: center;
     }
 
     .bouton{
         width: 4.375rem;
         cursor: pointer;
-        top: 40.625rem;
+        top: 75rem;
         position: absolute;
+    }
+
+    /* *************************SECTION CROQUIS****************************** */
+    .position3, .position4{
+        display: none;
     }
 
 
