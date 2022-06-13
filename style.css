@@ -16,7 +16,6 @@
 
 img{
     max-width: 100%;
-    max-height: auto;
 }
 /********************HEADER*********************/
 .navbar{
@@ -419,6 +418,7 @@ p{
         top: unset;
         left: unset;
         position: unset;
+        height: 45.5vh;
     }
 
     .photo{
@@ -461,8 +461,13 @@ p{
         color:#000000;
     }
 
-    .position3, .position4{
+    
+    .hidden{
         display: none;
+    }
+
+    .contact{
+        margin-top: .9375rem;
     }
 
 
