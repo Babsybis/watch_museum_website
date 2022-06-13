@@ -182,7 +182,6 @@ h1{
     display: inline-block;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 0.2s ease-in-out;
 }
 
 
@@ -264,7 +263,7 @@ p{
 
 .contain {
     border: solid 1px #615947;
-    margin: 3.75rem 1.375rem; 
+    margin: 0 1.375rem; 
     border-radius: .625rem;
     display: flex;
     width: 100vw;
@@ -297,6 +296,7 @@ p{
 }
 
 .contain p{
+    margin: 20%;
     width: 230px;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
@@ -310,6 +310,19 @@ p{
 
 
 /* ****************RESPONSIVE************************* */
+@media screen  and (max-width: 500px){
+
+}
+
+
+
+
+
+
+
+
+
+
 @media screen  and (max-width: 500px){
     .navbar .menu_hamburger{
         display: block;
@@ -332,7 +345,7 @@ p{
         background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
         backdrop-filter: blur(.4375rem); /*ne fonctionne pas*/
         width: 100%;
-        height: 50vh;
+        height: 55vh;
         top: 4.375rem;
         left: 0;
         display: flex;
@@ -410,7 +423,7 @@ p{
 
     .photo{
         width: 100%;
-        height: 31.25rem;
+        height: 50%;
         background-size: contain;
     }
 
@@ -425,11 +438,29 @@ p{
     .bouton{
         width: 4.375rem;
         cursor: pointer;
-        top: 75rem;
+        top: 72rem;
         position: absolute;
     }
 
     /* *************************SECTION CROQUIS****************************** */
+    .contain{
+        padding: 1.25rem;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    .bloc{
+        padding: 0;
+    }
+
+    
+    .contain p{
+        width: 9.375rem;
+        font-family: 'Lato', sans-serif;
+        font-size: 1rem;
+        color:#000000;
+    }
+
     .position3, .position4{
         display: none;
     }
