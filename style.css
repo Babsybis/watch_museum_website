@@ -6,7 +6,6 @@
     padding: 0; 
     text-decoration: none;
     list-style: none;
-    color:white;
     box-sizing: inherit;
 }
 
@@ -134,7 +133,6 @@ h1{
     font-size: 6.25rem;
     margin: 0;
     text-align: right;
-    color: #ffffff;
     padding-right: 6.25rem;
     padding-bottom: 4.6875rem;
 /* **********POUR REMPLIR LES LETTRES EN OR************* */
@@ -202,10 +200,11 @@ h2 {
     margin-bottom: 1.875rem;
 }
 
-p{
+#pictinfo p{
     font-family: 'STIX Two Text', serif; 
     line-height: 1.375rem;
     margin-bottom: 1.875rem;
+    color:#fff;
   
 }
 
@@ -302,11 +301,56 @@ p{
     color:#000000;
 }
 
-/* section map */
+/*************** SECTION MAPS *************************/
 .contact{
     margin-top: 3.75rem;
 }
 
+/*************** SECTION PELE MELE *************************/
+.pele_mele {
+    border: solid 1px #615947;
+    margin: 3.75rem 1.375rem; 
+    border-radius: .625rem;
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    padding: 1.25rem;
+}
+
+.contain_pm{
+    display: flex;
+    flex-direction: column;
+}
+
+.background_pm{
+    grid-column: 1/2;
+    align-items: center;
+    padding-top: 2.5rem;
+    background-attachment: fixed;
+}
+
+.visite{
+   background-image: url(images/visite.png);
+}
+
+table{
+    padding: 4.6875rem 3.125rem;  
+}
+
+table tr td{
+    border-bottom: solid 1px #fff;
+    padding:  .625rem 1.25rem;
+    background-color: #EDD9AD;
+}
+
+.rens {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5625rem;
+    padding-top: 9.375rem;
+}
 
 /* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 500px){
@@ -447,13 +491,13 @@ p{
         padding: 1.25rem;
         box-sizing: border-box;
         display: flex;
+        margin: .9375rem;
     }
 
     .bloc{
         padding: 0;
     }
 
-    
     .contain p{
         width: 9.375rem;
         font-family: 'Lato', sans-serif;
@@ -461,13 +505,34 @@ p{
         color:#000000;
     }
 
-    
     .hidden{
         display: none;
     }
 
+    /*************** SECTION MAPS *************************/
     .contact{
         margin-top: .9375rem;
+    }
+
+    /*************** SECTION PELE MELE *************************/
+    .pele_mele {
+        margin: .9375rem; 
+        gap: .9375rem;
+    }
+
+    .background_pm{
+        padding: .625rem;
+        background-attachment: fixed;
+        display: grid;
+        grid-column: 1/3;
+    }
+
+    .contain_pm{
+        grid-column: 1/3;
+    }
+
+    .rens{
+        padding: unset;
     }
 
 
