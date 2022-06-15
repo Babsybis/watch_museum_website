@@ -44,11 +44,12 @@ li a:after {
     width: 0;
     background: transparent;
     transition: width .5s ease, background-color .5s ease;
-  }
-  li a:hover:after {
+}
+
+li a:hover:after {
     width: 90%;
     background: #373636;
-  }
+}
 
 .navbar a{
     color: #373636;
@@ -56,8 +57,7 @@ li a:after {
 
 
 li a:hover{
-    color: #a1a1a1;
-    
+    color: #a1a1a1;   
 }
 
 /* *********LOGO*********** */
@@ -162,7 +162,7 @@ h1{
 #pagecontent{
     background-color: #000000;
     background: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 28));
-    height: 50vw;
+    height: 45vw;
     background-size: cover;
     border-radius: .625rem;
     margin: 3.75rem 1.375rem;  
@@ -174,7 +174,7 @@ h1{
 
 #carrousel{
     width: 45vw;
-    height: 79vh;
+    height: 80vh;
     border: solid 1px #fff;
     border-radius: 5px;
     box-shadow:  0 0 14px rgba(244, 244, 244, 0.3);
@@ -186,7 +186,7 @@ h1{
 
 #container{
     width: 45vw;
-    height: 79vh;
+    height: 80vh;
 }
 
 .photo{
@@ -197,6 +197,24 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  .show{
+    animation: slidein .6s;
+  }
+  
+
 
 #pictinfo{
     grid-column: 2;
@@ -238,41 +256,40 @@ h2 {
     transition: width .5s ease, background-color .5s ease;
   }
 .exp:hover:after {
-    width: 40%;
+    width: 35%;
     background: #ffffff;
   }
 
-/*******************************************************************************************************
-***********************************************************************************************************
-****************************MANQUE CADRAN SOLAIRE**********************************************************/
+
+
+/****************************ROUAGE**********************************************************/
 .roue{
-        position: absolute;
-        cursor: pointer;
-        animation: spin 10s linear infinite;
-}
-
-@-webkit-keyframes spin{
-    100%{-webkit-transform: rotate(360deg);}
-}
-
-@-moz-keyframes spin{
-    100%{-webkit-transform: rotate(360deg);}
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 @keyframes spin {
-    100%{-webkit-transform: rotate(360deg);}
+100%{transform: rotate(360deg);}
+}
+
+
+@keyframes spin2 {
+100%{transform: rotate(-360deg);}
 }
 
 #une{
-    right: 9.375rem;
-    top: 170%;
-    width: 10%;
+right: 9.375rem;
+top: 160%;
+width: 10%;
+animation: spin 10s linear infinite;
 }
 
 #deux{
-    right: 98px;
-    top: 185%;
-    width: 8%;
+right: 98px;
+top: 175.4%;
+width: 8%;
+animation: spin2 10s linear infinite;
 }
 
 /* *******************************CHEVRON************************* */
@@ -355,6 +372,18 @@ h2 {
     font-size: 1rem;
     color:#000000;
 }
+
+/* ******************ZOOM********************************* */
+
+.bloc {
+	transform: scale(1);
+	-webkit-transition: .6s ease-in-out;
+	transition: .6s ease-in-out;
+}
+.bloc:hover {
+	transform: scale(1.2);
+}
+
 
 /*************** SECTION MAPS *************************/
 .contact{
@@ -502,6 +531,10 @@ table tr td{
         padding-bottom: 30.5%;
     }
 
+    li a:hover:after {
+        width: 30%;
+    }
+
   .mobile_menu{
         margin-left: 0;
     }
@@ -567,12 +600,12 @@ table tr td{
         top: unset;
         left: unset;
         position: unset;
-        height: 45.5vh;
+        height: 45vh;
     }
 
     .photo{
         width: 100%;
-        height: 50%;
+        height: 49.5%;
         background-size: contain;
     }
 
@@ -582,8 +615,13 @@ table tr td{
         justify-content: unset;
         height: 31.25rem;
         justify-content: center;
+        padding-top: 3.125rem;
 
     }
+
+    .exp:hover:after {
+        width: 64%;
+      }
 
     .bouton{
         width: 4.375rem;
