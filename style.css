@@ -169,11 +169,12 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 5%;
 }
 
 #carrousel{
     width: 45vw;
-    height: 90vh;
+    height: 79vh;
     border: solid 1px #fff;
     border-radius: 5px;
     box-shadow:  0 0 14px rgba(244, 244, 244, 0.3);
@@ -185,7 +186,7 @@ h1{
 
 #container{
     width: 45vw;
-    height: 90vh;
+    height: 79vh;
 }
 
 .photo{
@@ -196,7 +197,6 @@ h1{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 #pictinfo{
     grid-column: 2;
@@ -217,43 +217,82 @@ h2 {
 }
 
 #pictinfo p{
-    font-family: 'STIX Two Text', serif; 
-    line-height: 1.375rem;
+    font-family: 'lato', serif; 
+    line-height: 1.6875rem;
     margin-bottom: 1.875rem;
-    color:#fff;
-  
+    color:#fff; 
 }
 
 .exp{
     color:#EDD9AD;
     font-family: 'Overlock', cursive;
     font-size: 1.875rem;
-
 }
+
+.exp:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+.exp:hover:after {
+    width: 40%;
+    background: #ffffff;
+  }
 
 /*******************************************************************************************************
 ***********************************************************************************************************
 ****************************MANQUE CADRAN SOLAIRE**********************************************************/
+.roue{
+        position: absolute;
+        cursor: pointer;
+        animation: spin 10s linear infinite;
+}
 
+@-webkit-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin{
+    100%{-webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    100%{-webkit-transform: rotate(360deg);}
+}
+
+#une{
+    right: 9.375rem;
+    top: 170%;
+    width: 10%;
+}
+
+#deux{
+    right: 98px;
+    top: 185%;
+    width: 8%;
+}
 
 /* *******************************CHEVRON************************* */
 .bouton{
     position: absolute;
-    width: 4.375rem;
+    width: 10%;
     cursor: pointer;
-    top: 25rem;
+    top: 50%;
 }
 
 #g{
     left: .9375rem;
-    opacity: 0.4;
+    opacity: 0.6;
     transform: rotate(0deg);
     transition: all 0.3s ease;
 }
 
 #d{
     right: .9375rem;
-    opacity: 0.4;
+    opacity: 0.6;
     transform: rotate(180deg);
     transition: all 0.3s ease;
 }
@@ -551,6 +590,19 @@ table tr td{
         cursor: pointer;
         top: 72rem;
         position: absolute;
+    }
+    
+
+    #une{
+        right: 8.125rem;
+        top: 136%;
+        width: 20%;
+    }
+    
+    #deux{
+        right: 5.9375rem;
+        top: 146%;
+        width: 16%;
     }
 
     /* *************************SECTION CROQUIS****************************** */
