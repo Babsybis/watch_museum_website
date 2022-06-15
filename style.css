@@ -120,6 +120,7 @@ img{
 /* ********************MUSEUM************************** */
 .museum{
     background-image: url(images/musee.jpg);
+    background-attachment: fixed;
     background-size: cover;
     height: calc(100vh - 100px);
     display: flex;
@@ -328,7 +329,6 @@ h2 {
     grid-column: 1/2;
     align-items: center;
     padding-top: 2.5rem;
-    background-attachment: fixed;
 }
 
 .visite{
@@ -352,20 +352,70 @@ table tr td{
     padding-top: 9.375rem;
 }
 
-/* ****************RESPONSIVE************************* */
-@media screen  and (max-width: 500px){
 
+/*************** FOOTER *************************/
+.background_footer{
+    background-color: #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50vh;
 }
 
+.background_footer img{
+    height: 50vh;
+    grid-column: 1/2;
+    margin: auto;
+}
 
+.right_position{
+    grid-column: 2/3;
+    margin: auto 0;
+}
 
+.background_footer p{
+    font-family: 'Overlock', cursive;
+    font-size: 1.25rem;
+    color:#ffffff;
+    margin-bottom: .625rem;
+}
 
+.background_footer h3{
+    font-size: 2.5rem;
+    color:#ffffff;
+    margin-bottom: .625rem;
+}
 
+.name_form{
+    color:#ffffff;
+    font-family: 'Overlock', cursive;
+    font-size: 2.5rem;
+}
 
+.background_footer span{
+    font-size: .8125rem;
+    text-indent: .625rem;
+    margin-top: .625rem;
+}
 
+#newsletter{
+    display: flex;
+}
 
+.form_width{
+    padding: .625rem 11.25rem .625rem 1.25rem;
+    border-radius: .625rem 0 0 .625rem;
+    border: solid .125rem #EDD9AD;
+}
 
+#button{
+    padding: .625rem 1.25rem; 
+    border: solid .125rem #EDD9AD;
+    background-color:#EDD9AD;
+    font-weight: bold;
+    border-radius: 0 .625rem .625rem 0;
+}
 
+/* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 500px){
     .navbar .menu_hamburger{
         display: block;
@@ -386,7 +436,7 @@ table tr td{
     .nav_links {
         position: absolute;
         background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
-        backdrop-filter: blur(.4375rem); /*ne fonctionne pas*/
+        backdrop-filter: blur(.4375rem); /*ne fonctionne pas sur firefox*/
         width: 100%;
         height: 55vh;
         top: 4.375rem;
@@ -405,14 +455,15 @@ table tr td{
 
     .navbar .nav_links ul li{
         font-size: 1.875rem;
-        padding-top: 20px;
+        padding: 1.25rem;
+        
     }
 
     .navbar .nav_links ul li:hover{
         background-color: hsla(0, 0%, 0%, 0.431);;
         width: 100vw;
         text-align: center;
-        padding-bottom: .625rem;
+        
         
     }
 
@@ -477,6 +528,7 @@ table tr td{
         justify-content: unset;
         height: 31.25rem;
         justify-content: center;
+
     }
 
     .bouton{
@@ -522,7 +574,6 @@ table tr td{
 
     .background_pm{
         padding: .625rem;
-        background-attachment: fixed;
         display: grid;
         grid-column: 1/3;
     }
@@ -534,6 +585,22 @@ table tr td{
     .rens{
         padding: unset;
     }
+
+ /*************** FOOTER *************************/
+.background_footer{
+    background-image: url(images/footer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: block;
+    padding: 1.25rem;
+    height: auto;
+}
+
+.background_footer img{
+    display: none;
+}
+
 
 
 }
