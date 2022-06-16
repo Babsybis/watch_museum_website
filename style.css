@@ -18,7 +18,7 @@ img{
 }
 /********************HEADER*********************/
 .navbar{
-    padding: 0 1.875rem;
+    padding: ;
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -160,7 +160,6 @@ h1{
 
 /* **********************SECTION DIAPO********************** */
 #pagecontent{
-    background-color: #000000;
     background: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 28));
     height: 45vw;
     background-size: cover;
@@ -187,6 +186,7 @@ h1{
 #container{
     width: 45vw;
     height: 80vh;
+
 }
 
 .photo{
@@ -199,19 +199,14 @@ h1{
 }
 
 @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
+    0%    { opacity: 0; }
+    20%   { opacity: .3; }
+    80%   { opacity: .6; }
+    100%  { opacity: .9 }
   }
 
   .show{
-    animation: slidein .6s;
+    animation: slidein 1.01s linear infinite;
   }
   
 
@@ -349,6 +344,9 @@ animation: spin2 10s linear infinite;
     display: flex;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+
 }
 
 .position2, .position4{
@@ -366,12 +364,149 @@ animation: spin2 10s linear infinite;
 }
 
 .contain p{
-    margin: 20%;
-    width: 230px;
+    line-height: 1.6875rem;
+    width: 18vw;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     color:#000000;
+    margin:10%
 }
+
+
+
+/* *****************************HORLOGE************************* */
+.clock {
+    width: 10rem;
+    height: 10rem;
+    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+    4px 4px 10px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.outer-clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.outer-clock-face::after {
+    
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+   
+.outer-clock-face::before, .outer-clock-face::after, .outer-clock-face .marking{
+    
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #000000;
+    z-index: 0;
+    left: 49%;
+}
+
+.outer-clock-face .marking {
+
+    background: #000000;
+    width: 1px;
+}
+
+.outer-clock-face .marking.marking-one {
+    
+    transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+    
+    transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+    
+    transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+    
+    transform: rotate(150deg)
+}
+
+
+.inner-clock-face {
+
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.inner-clock-face::before {
+        
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #ff0368;
+    z-index: 11;
+}
+        
+.hand {
+
+    width: 50%;
+    right: 50%;
+    height: 6px;
+    background: #e2e2e2;
+    position: absolute;
+    top: 50%;
+    border-radius: 6px;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+            
+    width: 30%;
+    z-index: 3;
+}
+
+.hand.min-hand {
+            
+    height: 3px;
+    z-index: 10;
+    width: 40%;
+}
+
+.hand.second-hand {
+            
+    background: #000000;
+    width: 50%;
+    height: 2px;
+}
+            
+    
+
+
+    
+    
+    
 
 /* ******************ZOOM********************************* */
 
@@ -570,7 +705,7 @@ table tr td{
         padding-top: 10px;
     }
 
-     /* *********1ERE SECTION*********** */
+     /* *********MUSEUM*********** */
 
     .museum{
         height: auto;
@@ -584,7 +719,7 @@ table tr td{
         padding-right: 1.25rem; 
     }
 
-     /* *********2EME SECTION*********** */
+     /* *********DIAPO*********** */
      #pagecontent {
         margin: .9375rem;
         position: static;
@@ -605,7 +740,7 @@ table tr td{
 
     .photo{
         width: 100%;
-        height: 49.5%;
+        height: 39.5%;
         background-size: contain;
     }
 
@@ -633,13 +768,13 @@ table tr td{
 
     #une{
         right: 8.125rem;
-        top: 136%;
+        top: 156%;
         width: 20%;
     }
     
     #deux{
         right: 5.9375rem;
-        top: 146%;
+        top: 166.5%;
         width: 16%;
     }
 
@@ -658,8 +793,10 @@ table tr td{
     .contain p{
         width: 9.375rem;
         font-family: 'Lato', sans-serif;
-        font-size: 1rem;
+        font-size: .875rem;
         color:#000000;
+        line-height: 1.25rem;
+        margin 0;
     }
 
     .hidden{
@@ -706,6 +843,14 @@ table tr td{
     display: none;
 }
 
-
-
 }
+
+
+@media(max-width:767px){
+     /* ************POUR LE MENU DEROULANT*********** */
+     /* *****************************DIAPO*********** */
+    /* ****************SECTION CROQUIS***************** */
+}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
