@@ -500,13 +500,6 @@ animation: spin2 10s linear infinite;
     width: 50%;
     height: 2px;
 }
-            
-    
-
-
-    
-    
-    
 
 /* ******************ZOOM********************************* */
 
@@ -558,16 +551,36 @@ table{
 }
 
 table tr td{
-    border-bottom: solid 1px #fff;
     padding:  .625rem 1.25rem;
     background-color: #EDD9AD;
 }
 
 .rens {
-    display: flex;
+    font-family: 'lato', serif; 
     justify-content: space-around;
     font-size: 1.5625rem;
-    padding-top: 9.375rem;
+    padding-top: 3.125rem;
+    display: flex;
+    line-height: 3.125rem;
+}
+
+.rens p:first-line{
+    font-weight: 600;
+}
+
+td{
+    font-family: 'lato', serif; 
+    line-height: 1.6875rem;
+    margin-bottom: 1.875rem;
+}
+
+.title{
+    font-weight: 600;
+}
+
+.title span{
+    font-size: .625rem;
+    font-weight: 400;
 }
 
 
