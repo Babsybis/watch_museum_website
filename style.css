@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
     margin: 0;
     padding: 0; 
     text-decoration: none;
     list-style: none;
+    box-sizing: inherit;
+}
+
+:root{
     box-sizing: border-box;
 }
 
-/* ******HEADER******** */
+img{
+    max-width: 100%;
+}
+/********************HEADER*********************/
 .navbar{
-    padding: 0 1.875rem;
+    padding: ;
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -25,14 +35,29 @@
     font-size: 2.625rem;
     color: #373636;
 }
+/* *******************CHANGEMENT DE LIEN************* */
+li a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
 
-.navbar .nav_links ul li.active a {
-    color: rgb(89, 89, 89); /*a changer*/
-    font-weight: 600;
+li a:hover:after {
+    width: 90%;
+    background: #373636;
 }
 
 .navbar a{
     color: #373636;
+}
+
+
+li a:hover{
+    color: #a1a1a1;   
 }
 
 /* *********LOGO*********** */
@@ -43,7 +68,7 @@
     margin-top: -1.25rem;
 }
 .navbar .logo{
-    font-family: 'STIX Two Text', serif;
+
     font-size: 3.125rem;
     font-style: italic;
     color: #9E9E9E;
@@ -93,10 +118,12 @@
     transform: translateY(10px);
 }
 
+/* ************POUR ENLEVER BARRE DU MILIEU***************** */
 .burger.active span{
     background-color: transparent;
 }
 
+/* ********************POUR LA CROIX*********************** */
 .burger.active span::before{
     transform: translateY(0px) rotateZ(45deg);
 }
@@ -107,13 +134,519 @@
 
 /* ********************MUSEUM************************** */
 .museum{
-    width: 100vw;
     background-image: url(images/musee.jpg);
+    background-attachment: fixed;
     background-size: cover;
     height: calc(100vh - 100px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    border-top: solid 1px #373636ed;
+}
+
+h1{
+    font-family: 'Overlock', cursive;
+    font-size: 6.25rem;
+    margin: 0;
+    text-align: right;
+    padding-right: 6.25rem;
+    padding-bottom: 4.6875rem;
+/* **********POUR REMPLIR LES LETTRES EN OR************* */
+    background-clip: text;
+    background-image: url(images/or.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;   
+}
+
+/* **********************SECTION DIAPO********************** */
+#pagecontent{
+    background: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 28));
+    height: 45vw;
+    background-size: cover;
+    border-radius: .625rem;
+    margin: 3.75rem 1.375rem;  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5%;
+}
+
+#carrousel{
+    width: 45vw;
+    height: 80vh;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    box-shadow:  0 0 14px rgba(244, 244, 244, 0.3);
+    position: relative;
+    overflow: hidden;
+    top: 2.5rem;
+    left: 2.5rem;
+}
+
+#container{
+    width: 45vw;
+    height: 80vh;
+
+}
+
+.photo{
+    width: 45vw;
+    height: 90vh;
+    margin: 0;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes slidein {
+    0%    { opacity: 0; }
+    20%   { opacity: .3; }
+    80%   { opacity: .6; }
+    100%  { opacity: .9 }
+  }
+
+  .show{
+    animation: slidein 1.01s linear infinite;
+  }
+  
+
+
+#pictinfo{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-right: 40px;   
+}
+
+h2 {
+    color:#EDD9AD;
+    font-family: 'Overlock', cursive;
+    font-size: 2.5rem;
+    display: flex;  
+    text-transform: capitalize;
+    margin-bottom: 1.875rem;
+}
+
+#pictinfo p{
+    font-family: 'lato', serif; 
+    line-height: 1.6875rem;
+    margin-bottom: 1.875rem;
+    color:#fff; 
+}
+
+.exp{
+    color:#EDD9AD;
+    font-family: 'Overlock', cursive;
+    font-size: 1.875rem;
+}
+
+.exp:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+.exp:hover:after {
+    width: 35%;
+    background: #ffffff;
+  }
+
+
+
+/****************************ROUAGE**********************************************************/
+.roue{
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@keyframes spin {
+100%{transform: rotate(360deg);}
 }
 
 
+@keyframes spin2 {
+100%{transform: rotate(-360deg);}
+}
+
+#une{
+right: 9.375rem;
+top: 160%;
+width: 10%;
+animation: spin 10s linear infinite;
+}
+
+#deux{
+right: 98px;
+top: 175.4%;
+width: 8%;
+animation: spin2 10s linear infinite;
+}
+
+/* *******************************CHEVRON************************* */
+.bouton{
+    position: absolute;
+    width: 10%;
+    cursor: pointer;
+    top: 50%;
+}
+
+#g{
+    left: .9375rem;
+    opacity: 0.6;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+
+#d{
+    right: .9375rem;
+    opacity: 0.6;
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+
+#g:hover{
+    transform: rotate(0deg) scale(1,1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+#d:hover{
+    transform: rotate(180deg) scale(1,1);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+/* *************************SECTION CROQUIS****************************** */
+.croquis{
+    display: flex;
+}
+
+.contain {
+    border: solid 1px #615947;
+    margin: 0 1.375rem; 
+    border-radius: .625rem;
+    display: flex;
+    width: 100vw;
+    height: 43.75rem;
+    justify-content: space-evenly;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.position1, .position3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+
+}
+
+.position2, .position4{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.bloc{
+    border: solid 1px #615947;
+    border-radius: .625rem;
+    padding-left:  2.625rem;
+    padding-right: 2.625rem;
+    padding-bottom: 1.25rem;  
+}
+
+.contain p{
+    line-height: 1.6875rem;
+    width: 18vw;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color:#000000;
+    margin:10%
+}
+
+
+
+/* *****************************HORLOGE************************* */
+.clock {
+    width: 10rem;
+    height: 10rem;
+    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+    4px 4px 10px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.outer-clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.outer-clock-face::after {
+    
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+   
+.outer-clock-face::before, .outer-clock-face::after, .outer-clock-face .marking{
+    
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #000000;
+    z-index: 0;
+    left: 49%;
+}
+
+.outer-clock-face .marking {
+
+    background: #000000;
+    width: 1px;
+}
+
+.outer-clock-face .marking.marking-one {
+    
+    transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+    
+    transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+    
+    transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+    
+    transform: rotate(150deg)
+}
+
+
+.inner-clock-face {
+
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.inner-clock-face::before {
+        
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #ff0368;
+    z-index: 11;
+}
+        
+.hand {
+
+    width: 50%;
+    right: 50%;
+    height: 6px;
+    background: #e2e2e2;
+    position: absolute;
+    top: 50%;
+    border-radius: 6px;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+            
+    width: 30%;
+    z-index: 3;
+}
+
+.hand.min-hand {
+            
+    height: 3px;
+    z-index: 10;
+    width: 40%;
+}
+
+.hand.second-hand {
+            
+    background: #000000;
+    width: 50%;
+    height: 2px;
+}
+
+/* ******************ZOOM********************************* */
+
+.bloc {
+	transform: scale(1);
+	-webkit-transition: .6s ease-in-out;
+	transition: .6s ease-in-out;
+}
+.bloc:hover {
+	transform: scale(1.2);
+}
+
+
+/*************** SECTION MAPS *************************/
+.contact{
+    margin-top: 3.75rem;
+}
+
+/*************** SECTION PELE MELE *************************/
+.pele_mele {
+    border: solid 1px #615947;
+    margin: 3.75rem 1.375rem; 
+    border-radius: .625rem;
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    padding: 1.25rem;
+}
+
+.contain_pm{
+    display: flex;
+    flex-direction: column;
+}
+
+.background_pm{
+    grid-column: 1/2;
+    align-items: center;
+    padding-top: 2.5rem;
+}
+
+.visite{
+   background-image: url(images/visite.png);
+}
+
+table{
+    padding: 4.6875rem 3.125rem;  
+}
+
+table tr td{
+    padding:  .625rem 1.25rem;
+    background-color: #EDD9AD;
+}
+
+.rens {
+    font-family: 'lato', serif; 
+    justify-content: space-around;
+    font-size: 1.5625rem;
+    padding-top: 3.125rem;
+    display: flex;
+    line-height: 3.125rem;
+}
+
+.rens p:first-line{
+    font-weight: 600;
+}
+
+td{
+    font-family: 'lato', serif; 
+    line-height: 1.6875rem;
+    margin-bottom: 1.875rem;
+}
+
+.title{
+    font-weight: 600;
+}
+
+.title span{
+    font-size: .625rem;
+    font-weight: 400;
+}
+
+
+/*************** FOOTER *************************/
+.background_footer{
+    background-color: #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50vh;
+}
+
+.background_footer img{
+    height: 50vh;
+    grid-column: 1/2;
+    margin: auto;
+}
+
+.right_position{
+    grid-column: 2/3;
+    margin: auto 0;
+}
+
+.background_footer p{
+    font-family: 'Overlock', cursive;
+    font-size: 1.25rem;
+    color:#ffffff;
+    margin-bottom: .625rem;
+}
+
+.background_footer h3{
+    font-size: 2.5rem;
+    color:#ffffff;
+    margin-bottom: .625rem;
+}
+
+.name_form{
+    color:#ffffff;
+    font-family: 'Overlock', cursive;
+    font-size: 2.5rem;
+}
+
+.background_footer span{
+    font-size: .8125rem;
+    text-indent: .625rem;
+    margin-top: .625rem;
+}
+
+#newsletter{
+    display: flex;
+}
+
+.form_width{
+    padding: .625rem 11.25rem .625rem 1.25rem;
+    border-radius: .625rem 0 0 .625rem;
+    border: solid .125rem #EDD9AD;
+}
+
+#button{
+    padding: .625rem 1.25rem; 
+    border: solid .125rem #EDD9AD;
+    background-color:#EDD9AD;
+    font-weight: bold;
+    border-radius: 0 .625rem .625rem 0;
+}
+
+/* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 500px){
     .navbar .menu_hamburger{
         display: block;
@@ -123,24 +656,31 @@
         padding: 0;
     }
 
+    /* ************POUR LE MENU DEROULANT*********** */
     .nav_links ul {
         flex-direction: column;
         align-items: center;
+        box-sizing: border-box;
+        padding-top: 3.125rem;
     }
 
     .nav_links {
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.5); /*a modifier*/
-        backdrop-filter: blur(.4375rem); /*ne fonctionne pas*/
+        background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
+        backdrop-filter: blur(.4375rem); /*ne fonctionne pas sur firefox*/
         width: 100%;
-        height: 100vh;
-        top: 65px;
+        top: 4.375rem;
         left: 0;
         display: flex;
         justify-content: center;
         align-items: flex-start; 
         margin-left: -100%;
         transition: all 0.5s ease;
+        padding-bottom: 30.5%;
+    }
+
+    li a:hover:after {
+        width: 30%;
     }
 
   .mobile_menu{
@@ -150,19 +690,180 @@
 
     .navbar .nav_links ul li{
         font-size: 1.875rem;
-        padding-top: 20px;
+        padding: 1.25rem;
+        
+    }
+
+    .navbar .nav_links ul li:hover{
+        background-color: hsla(0, 0%, 0%, 0.431);;
+        width: 100vw;
+        text-align: center;
+        
+        
+    }
+
+    .navbar .nav_links ul li a:hover{
+        color:#ffffff
     }
 
     /* *********LOGO*********** */
-    .museum{
-        height: calc(100vh - 64px);
-    }
+
     .navbar span{
         font-size: 4.375rem ;
-}
+    }
     .navbar .logo{
         font-size: 1.875rem;
         margin-left: .9375rem;
+        box-sizing: border-box;
+        padding-top: 10px;
+    }
+
+     /* *********MUSEUM*********** */
+
+    .museum{
+        height: auto;
+        background-position: center;
+    }
+    
+    h1{
+        font-size: 3.125rem;
+        margin: 0;
+        padding-bottom: 18.75rem;
+        padding-right: 1.25rem; 
+    }
+
+     /* *********DIAPO*********** */
+     #pagecontent {
+        margin: .9375rem;
+        position: static;
+        grid-template-rows: 0.50fr 0.50fr;
+        height: 110vh;
+
+    }
+
+    #carrousel{
+        grid-row: 2;
+        grid-column: 1/3;
+        width: 100%;
+        top: unset;
+        left: unset;
+        position: unset;
+        height: 45vh;
+    }
+
+    .photo{
+        width: 100%;
+        height: 39.5%;
+        background-size: contain;
+    }
+
+    #pictinfo{
+        grid-column: 1/3;
+        padding: .9375rem;
+        justify-content: unset;
+        height: 31.25rem;
+        justify-content: center;
+        padding-top: 3.125rem;
+
+    }
+
+    .exp:hover:after {
+        width: 64%;
+      }
+
+    .bouton{
+        width: 4.375rem;
+        cursor: pointer;
+        top: 72rem;
+        position: absolute;
+    }
+    
+
+    #une{
+        right: 8.125rem;
+        top: 156%;
+        width: 20%;
+    }
+    
+    #deux{
+        right: 5.9375rem;
+        top: 166.5%;
+        width: 16%;
+    }
+
+    /* *************************SECTION CROQUIS****************************** */
+    .contain{
+        padding: 1.25rem;
+        box-sizing: border-box;
+        display: flex;
+        margin: .9375rem;
+    }
+
+    .bloc{
+        padding: 0;
+    }
+
+    .contain p{
+        width: 9.375rem;
+        font-family: 'Lato', sans-serif;
+        font-size: .875rem;
+        color:#000000;
+        line-height: 1.25rem;
+        margin 0;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    /*************** SECTION MAPS *************************/
+    .contact{
+        margin-top: .9375rem;
+    }
+
+    /*************** SECTION PELE MELE *************************/
+    .pele_mele {
+        margin: .9375rem; 
+        gap: .9375rem;
+    }
+
+    .background_pm{
+        padding: .625rem;
+        display: grid;
+        grid-column: 1/3;
+    }
+
+    .contain_pm{
+        grid-column: 1/3;
+    }
+
+    .rens{
+        padding: unset;
+    }
+
+ /*************** FOOTER *************************/
+.background_footer{
+    background-image: url(images/footer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: block;
+    padding: 1.25rem;
+    height: auto;
+}
+
+.background_footer img{
+    display: none;
+}
 
 }
+
+
+@media(max-width:767px){
+     /* ************POUR LE MENU DEROULANT*********** */
+     /* *****************************DIAPO*********** */
+    /* ****************SECTION CROQUIS***************** */
 }
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
