@@ -815,7 +815,7 @@ td{
         font-size: .875rem;
         color:#000000;
         line-height: 1.25rem;
-        margin 0;
+        margin: 0;
     }
 
     .hidden{
@@ -867,15 +867,15 @@ td{
 /* @media (min-width: 31.3125rem) and (max-width: 45rem){
     .navbar .menu_hamburger{
         display: block;
-    }
+    } 
 
-    /* ************POUR LE MENU DEROULANT*********** */
+    ************POUR LE MENU DEROULANT***********
     .nav_links ul {
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
         padding-top: 3.125rem;
-    }
+    } */
 
     .nav_links {
         position: absolute;
@@ -931,7 +931,7 @@ td{
         top: 193%;
         width: 16%;
     }
-/* *********DIAPO*********** */
+/* *********DIAPO***********
 #pagecontent {
     margin: .9375rem;
     grid-template-rows: 0.50fr 0.50fr;
@@ -969,9 +969,9 @@ td{
     cursor: pointer;
     top: 72rem;
     position: absolute;
-}
+} */
 
-/* *************************SECTION CROQUIS****************************** */
+/* *************************SECTION CROQUIS******************************
 .contain{
     padding: 1.25rem;
     box-sizing: border-box;
@@ -1027,29 +1027,9 @@ right: 6.25rem;
 top: 192%;
 width: 14%;
 animation: spin2 10s linear infinite;
-}
-}
+} 
 
 
 
 
 
-
-
-
-
-@media (min-width: 45.0625rem) and (max-width: 53.125rem){
-
-@media (min-width: 75rem) and (max-width: 100rem)
-
-}
-@media screen  and (min-width 112.5rem){
-/
-/* *****************************DIAPO*********** */
-
-
-
-}
-@media screen  and (max-width: 1200px){
-
-} */
