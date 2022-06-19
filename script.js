@@ -18,7 +18,7 @@ burger.addEventListener('click', ()=> {
 // ********************DIAPO********************
 let pageContent = document.getElementById('pagecontent');
 
-// ********************DIV CONTENANT IMAGES ET TEXTES********************
+// ********************DIV TEXTE********************
 let pictInfo = document.getElementById('pictinfo');
 
 // ********************CREATION JSON********************
@@ -56,12 +56,11 @@ let randomImage = images[Math.floor(Math.random() * images.length)];
 document.body.onload = function (){
     nbr = 4;
 
-
     container=document.getElementById("container");
     g=document.getElementById("g");
     d=document.getElementById("d");
 
-    container.style.width=(45*nbr)+"vw";
+    container.style.width=(40*nbr)+"vh";
 
 }
 let i=1
