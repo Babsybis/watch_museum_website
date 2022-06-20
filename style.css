@@ -165,7 +165,7 @@ h1{
     margin: 1%;
     height: 50vh;
     display: grid;
-    grid-template-columns: 5% 0.7fr 5% 0.7fr 0.3fr;
+    grid-template-columns: 5% .7fr 5% 1fr 5%;
     grid-template-rows: repeat(4, 12.5vh);
     border-radius: .625rem;
 }
@@ -256,38 +256,6 @@ h1{
     background: #ffffff;
   }
 
-
-
-/****************************ROUAGE**********************************************************/
-.roue{
-    cursor: pointer;
-    opacity: 0.8;
-    grid-column: 5/6;
-}
-
-@keyframes spin {
-100%{transform: rotate(360deg);}
-}
-
-
-@keyframes spin2 {
-100%{transform: rotate(-360deg);}
-}
-
-#une{
-    grid-row: 3/4;
-    width: 60%;
-    animation: spin 10s linear infinite;
-
-}
-
-#deux{
-    width: 58%;
-    animation: spin2 10s linear infinite;
-    grid-row: 4/5;
-    padding-left: 10%;
-}
-
 /* *******************************CHEVRON************************* */
 .bouton{
     width: 10%;
@@ -342,6 +310,9 @@ h1{
     box-sizing: border-box;
     margin-bottom: 0;
 }
+.position1{
+    position: relative;
+}
 
 .position1, .position3{
     display: flex;
@@ -361,9 +332,10 @@ h1{
 .bloc{
     border: solid 1px #615947;
     border-radius: .625rem;
-    padding-left:  2.625rem;
-    padding-right: 2.625rem;
-    padding-bottom: 1.25rem;  
+}
+
+.cadre{
+    padding: 0 10%;
 }
 
 .contain p{
@@ -375,14 +347,50 @@ h1{
     margin:10%
 }
 
+/****************************ROUAGE**********************************************************/
+.roue{
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+@keyframes spin {
+100%{transform: rotate(360deg);}
+}
+
+
+@keyframes spin2 {
+100%{transform: rotate(-360deg);}
+}
+
+#une{
+    width: 49%;
+    animation: spin 10s linear infinite;
+    top: 37.5%;
+    left:-6.5%;   
+
+}
+
+#deux{
+    width: 40%;
+    animation: spin2 10s linear infinite;
+    top: 45%;
+}
+
+#trois{
+    animation: spin 10s linear infinite;
+    width: 60%;
+    top: 40%;
+    left:40%; 
+
+}
+
 
 
 /* *****************************HORLOGE************************* */
 .clock {
     width: 10rem;
     height: 10rem;
-    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
-    4px 4px 10px rgba(0,0,0,0.3);
     border-radius: 50%;
     margin: 50px auto;
     position: relative;
@@ -466,7 +474,7 @@ h1{
     left: 50%;
     width: 16px;
     height: 16px;
-    background: #ff0368;
+    background: #eed39e;
     z-index: 11;
 }
         
@@ -498,8 +506,8 @@ h1{
 }
 
 .hand.second-hand {
-            
-    background: #ff0368;
+    background: #eed39e;       
+    /* background: #ff0368; */
     width: 50%;
     height: 2px;
 }
@@ -686,7 +694,7 @@ td{
         width: 30%;
     }
 
-  .mobile_menu{
+    .mobile_menu{
         margin-left: 0;
     }
 
@@ -738,42 +746,44 @@ td{
      /* *********DIAPO*********** */
      #pagecontent{
         display: grid;
-        grid-template-columns: 5% 0.7fr 0.8fr 5% 0.2fr;
+        grid-template-columns: 5% 0.7fr 0.8fr 5% 5%;
         grid-template-rows: 1.5fr .5fr;
-        height: 70vh;
+        height: 90vh;
+        margin: 2% 1%;
     }
+
     #pictinfo{
         grid-column: 2/5;
         grid-row: 1/2;
-}
+    }
 
      #pictinfo h2 {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
         margin-bottom: 0;
         grid-row: unset;
-        padding-top: unset;
+        
     }
     
     #pictinfo p{
         line-height: 1.25rem;
         grid-row: unset;
-        font-size: .75rem;    
+        font-size: 1rem;    
     }
     
     #pictinfo a{
-        font-size: .875rem;
+        font-size: 1rem;
         padding-bottom: unset;
     }
 
     .carrousel{
         height: 25vh;
         grid-row: 2/3;
-        grid-column: 2/4;   
+        grid-column: 2/5;   
     }
 
     .photo{
         height: 65%;
-        background-size: contain;
+        background-size: cover;
     }
 
   
@@ -782,40 +792,46 @@ td{
     }
     
     #d{
-        grid-column: 4/5;
+        grid-column: 5/6;
         width: 100%;
     }
     
     #une{
-        grid-row: 2/3;
-        width: 80%;
+        width: 50%;
+        top: 45%;
     }
     
     #deux{
-        width: 75%;
-        grid-row: 2/3;
-        padding-top: 100%;
+        width: 35%;
+        top: 55%;
+    }
+
+    #trois{
+        width: 45%;
+        top: 55%;
+        left: 45%;
+
     }
 
     /* *************************SECTION CROQUIS****************************** */
-    .contain{
-        padding: 1.25rem;
-        box-sizing: border-box;
+    .contain {
+        height: 80vh;
+        padding-top: 1rem;
+        padding-bottom: unset;
+        margin: 2% 1%;
+    }
+
+    .position1{
+        position: relative;
+    }
+    
+    .position2, .position4{
         display: flex;
-        margin: .9375rem;
+        flex-direction: column;
     }
-
-    .bloc{
-        padding: 0;
-    }
-
+    
     .contain p{
-        width: 9.375rem;
-        font-family: 'Lato', sans-serif;
-        font-size: .875rem;
-        color:#000000;
-        line-height: 1.25rem;
-        margin: 0;
+        width: 90%;
     }
 
     .hidden{
@@ -864,6 +880,7 @@ td{
 
 }
 
+
 /* @media (min-width: 31.3125rem) and (max-width: 45rem){
     .navbar .menu_hamburger{
         display: block;
@@ -877,10 +894,10 @@ td{
         padding-top: 3.125rem;
     } */
 
-    .nav_links {
+    /* .nav_links {
         position: absolute;
-        background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
-        backdrop-filter: blur(.4375rem); /*ne fonctionne pas sur firefox*/
+        background-color: hsla(0, 0%, 100%, 0.5);
+        backdrop-filter: blur(.4375rem); 
         width: 100%;
         top: 6.25rem;
         left: 0;
@@ -930,7 +947,7 @@ td{
         right: 5.9375rem;
         top: 193%;
         width: 16%;
-    }
+    } */
 /* *********DIAPO***********
 #pagecontent {
     margin: .9375rem;
@@ -1001,21 +1018,21 @@ img{
 }
 
 /*************** SECTION MAPS *************************/
-.contact{
+/* .contact{
     margin-top: .9375rem;
-}
+} */
 
 
 
 /****************************ROUAGE**********************************************************/
-.roue{
+/* .roue{
     position: absolute;
     cursor: pointer;
     opacity: 0.8;
-}
+} */
 
 
-#une{
+/* #une{
 right: 9.375rem;
 top: 181.5%;
 width: 20%;
@@ -1027,7 +1044,7 @@ right: 6.25rem;
 top: 192%;
 width: 14%;
 animation: spin2 10s linear infinite;
-} 
+}  */
 
 
 
