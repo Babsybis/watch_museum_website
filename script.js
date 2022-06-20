@@ -129,33 +129,55 @@ var x=1;
 
 function unSur2(){
 x++
-    if (x%2 == 0){changePo()}else{changePo2()}
+    if (x%4 == 0){changePo1()}
+    else if (x%3==0){changePo2()}
+    else if (x%2){changePo3()}
+    else{changePo4()}
 }
-  function changePo() {
+  function changePo1() {
     po2 = document.querySelector('.position2');
     po2.classList.add('hidden');
     po1 = document.querySelector('.position1');
-    po1.classList.add('hidden');
+    po1.classList.remove('hidden');
     po3=document.querySelector('.position3');
-        po3.classList.remove('hidden');
-        po4=document.querySelector('.position4');
-        po4.classList.remove('hidden'); 
-    console.log(po2);
-    
+    po3.classList.add('hidden');
+    po4=document.querySelector('.position4');
+    po4.classList.add('hidden');   
   }
   
   function changePo2() {
     po2 = document.querySelector('.position2');
     po2.classList.remove('hidden');
     po1 = document.querySelector('.position1');
-    po1.classList.remove('hidden');
+    po1.classList.add('hidden');
     po3=document.querySelector('.position3');
-        po3.classList.add('hidden');
-        po4=document.querySelector('.position4');
-        po4.classList.add('hidden'); 
-    console.log(po2);
-    
+    po3.classList.add('hidden');
+    po4=document.querySelector('.position4');
+    po4.classList.add('hidden'); 
   }
+
+  function changePo3() {
+    po2 = document.querySelector('.position2');
+    po2.classList.add('hidden');
+    po1 = document.querySelector('.position1');
+    po1.classList.add('hidden');
+    po3=document.querySelector('.position3');
+    po3.classList.remove('hidden');
+    po4=document.querySelector('.position4');
+    po4.classList.add('hidden'); 
+  }
+
+  function changePo4() {
+    po2 = document.querySelector('.position2');
+    po2.classList.add('hidden');
+    po1 = document.querySelector('.position1');
+    po1.classList.add('hidden');
+    po3=document.querySelector('.position3');
+    po3.classList.add('hidden');
+    po4=document.querySelector('.position4');
+    po4.classList.remove('hidden'); 
+  }
+
   function stopColor() {
     clearInterval(myInterval);
   }
