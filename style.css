@@ -534,7 +534,6 @@ h1{
     border: solid 1px #615947;
     margin: 1%; 
     border-radius: .625rem;
-    display: flex;
     justify-content: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -542,14 +541,9 @@ h1{
     padding: 1.25rem;
 }
 
-.contain_pm{
-    display: flex;
-    flex-direction: column;
-}
 
 .background_pm{
     grid-column: 1/2;
-    align-items: center;
     padding-top: 2.5rem;
 }
 
@@ -569,14 +563,15 @@ table tr td{
 .rens {
     font-family: 'lato', serif; 
     justify-content: space-around;
-    font-size: 1.5625rem;
+    font-size: 1.375rem;
     padding-top: 3.125rem;
     display: flex;
-    line-height: 3.125rem;
+    line-height: 1.875rem;
 }
 
 .rens p:first-line{
     font-weight: 600;
+    font-size: 1.75rem;
 }
 
 td{
@@ -843,25 +838,63 @@ td{
         margin-top: .9375rem;
     }
 
-    /*************** SECTION PELE MELE *************************/
-    .pele_mele {
-        margin: .9375rem; 
-        gap: .9375rem;
-    }
+/*************** SECTION PELE MELE *************************/
+.pele_mele {
+    margin: 2% 1%; 
+    display: grid;
+    gap: .3125rem;
+    padding: 1.25rem;
+}
 
-    .background_pm{
-        padding: .625rem;
-        display: grid;
-        grid-column: 1/3;
-    }
+.contain_pm{
+    grid-row: 1/2;
+}
 
-    .contain_pm{
-        grid-column: 1/3;
-    }
+.background_pm{
+    padding:0;
+}
 
-    .rens{
-        padding: unset;
-    }
+.prix{
+    grid-row: 2/3;
+}
+
+.table{
+    padding: 0; 
+}
+
+.table tr td{
+    padding:  0;
+}
+
+.rens {
+    justify-content: space-around;
+    font-size: 1rem;
+    padding-top: 1.875rem;
+    line-height: 1.375rem;
+}
+
+.rens p:first-line{
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+td{
+    font-family: 'lato', serif; 
+    line-height: 1.6875rem;
+    margin-bottom: 1.875rem;
+}
+
+.title{
+    font-weight: 600;
+}
+
+.title span{
+    font-size: .625rem;
+    font-weight: 400;
+}
+
+
+
 
  /*************** FOOTER *************************/
 .background_footer{
