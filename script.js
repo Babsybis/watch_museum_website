@@ -15,9 +15,6 @@ burger.addEventListener('click', ()=> {
 });
 
 
-// ********************DIAPO********************
-let pageContent = document.getElementById('pagecontent');
-
 // ********************DIV TEXTE********************
 let pictInfo = document.getElementById('pagecontent');
 
@@ -28,30 +25,6 @@ let images = JSON.parse(rawImages);
 
 // ********************AFFICHAGE ALEATOIRE DU DIAPO********************
 let randomImage = images[Math.floor(Math.random() * images.length)];
-//pageContent.style.backgroundImage = `url(images/${(images[2].filename})`;
-
-//  ********************VIDER CONTENU DE LA DIV PICTINFO********************
-// while(pictInfo.firstChild){
-//     pictInfo.removeChild(pictInfo.firstChild);
-// };
-
-// // ********************AFFICHER LE TITRE SUR LE BON DIAPO********************
-// let pictTitle = document.createElement('h2');
-// let picTitleContent = document.createTextNode(randomImage.name);
-// pictTitle.appendChild(picTitleContent);
-// pictInfo.appendChild(pictTitle);
-
-// // ********************AFFICHER LE BON CONTENU********************
-// let pictAuthor = document.createElement('p');
-// let picData = document.createElement('p');
-// let pictAuthorContent = document.createTextNode(randomImage.author);
-// let picDataContent = document.createTextNode(randomImage.exposure);
-// picData.classList.add('exp');
-// pictAuthor.appendChild(pictAuthorContent);
-// picData.appendChild(picDataContent);
-// pictInfo.appendChild(pictAuthor);
-// pictInfo.appendChild(picData);
-
 
 document.body.onload = function (){
     nbr = 4;
