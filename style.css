@@ -356,7 +356,7 @@ h1{
 #une{
     width: 49%;
     animation: spin 10s linear infinite;
-    top: 37.5%;
+    top: 40%;
     left:-6.5%;   
 
 }
@@ -364,13 +364,13 @@ h1{
 #deux{
     width: 40%;
     animation: spin2 10s linear infinite;
-    top: 45%;
+    top: 47.5%;
 }
 
 #trois{
     animation: spin 10s linear infinite;
     width: 60%;
-    top: 40%;
+    top: 45%;
     left:40%; 
 
 }
@@ -542,13 +542,16 @@ h1{
 }
 
 table{
-    padding: 4.6875rem 3.125rem;  
+    padding: 4.6875rem 3.125rem; 
+    border-spacing: 0; 
 }
 
 table tr td{
     padding:  .625rem 1.25rem;
     background-color: #EDD9AD;
+    border-bottom: 1px solid #fff; 
 }
+
 
 .rens {
     font-family: 'lato', serif; 
@@ -572,11 +575,6 @@ td{
 
 .title{
     font-weight: 600;
-}
-
-.title span{
-    font-size: .625rem;
-    font-weight: 400;
 }
 
 
@@ -607,6 +605,7 @@ td{
 }
 
 .background_footer h3{
+    font-family: 'Overlock', cursive;
     font-size: 2.5rem;
     color:#ffffff;
     margin-bottom: .625rem;
@@ -640,6 +639,14 @@ td{
     background-color:#EDD9AD;
     font-weight: bold;
     border-radius: 0 .625rem .625rem 0;
+    cursor: pointer;
+}
+
+#button:hover{
+    background-color:black;
+    border: solid .125rem #EDD9AD;
+    color: #EDD9AD;
+
 }
 
 /* ****************RESPONSIVE************************* */
@@ -738,7 +745,7 @@ td{
 
      #pagecontent h2 {
         grid-area: 1 / 1 / 2 / 6;
-        font-size: 1.25rem;
+        font-size: 1.5625rem;
         
     }
     
@@ -749,7 +756,7 @@ td{
     }
     
     #pagecontent a{
-        font-size: 1rem;
+        font-size: 1.25rem;
         grid-area: 4 / 1 / 5 / 6;
     }
 
@@ -776,7 +783,7 @@ td{
         width: 100%;
     }
     
-    /* #une{
+    #une{
         width: 50%;
         top: 45%;
     }
@@ -790,8 +797,7 @@ td{
         width: 45%;
         top: 55%;
         left: 45%;
-
-    } */
+    }
 
     /* *************************SECTION CROQUIS****************************** */
     .contain {
@@ -827,59 +833,29 @@ td{
 .pele_mele {
     margin: 2% 1%; 
     display: grid;
-    gap: .3125rem;
-    padding: 1.25rem;
+    gap: .3125rem 0;
 }
 
 .contain_pm{
     grid-row: 1/2;
-}
-
-.background_pm{
-    padding:0;
+    grid-column: 1/3;
 }
 
 .prix{
+    grid-column: 1/3;
     grid-row: 2/3;
 }
 
-.table{
-    padding: 0; 
-}
-
-.table tr td{
-    padding:  0;
-}
-
 .rens {
-    justify-content: space-around;
     font-size: 1rem;
-    padding-top: 1.875rem;
     line-height: 1.375rem;
+    padding-top: 1.5625rem ;
 }
 
 .rens p:first-line{
     font-weight: 600;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
 }
-
-td{
-    font-family: 'lato', serif; 
-    line-height: 1.6875rem;
-    margin-bottom: 1.875rem;
-}
-
-.title{
-    font-weight: 600;
-}
-
-.title span{
-    font-size: .625rem;
-    font-weight: 400;
-}
-
-
-
 
  /*************** FOOTER *************************/
 .background_footer{
