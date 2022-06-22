@@ -26,6 +26,8 @@ let images = JSON.parse(rawImages);
 // ********************AFFICHAGE ALEATOIRE DU DIAPO********************
 let randomImage = images[Math.floor(Math.random() * images.length)];
 
+
+// ********************DIAPO********************
 document.body.onload = function (){
     nbr = 4;
 
@@ -96,11 +98,11 @@ let i=1
   }
   myFunction()
  
-    const myInterval = setInterval(unSur2, 5000);
+    const myInterval = setInterval(unSur4, 5000);
 
 var x=1;
 
-function unSur2(){
+function unSur4(){
 x++
     if (x%4 == 0){changePo1()}
     else if (x%3==0){changePo2()}
@@ -182,11 +184,5 @@ function setDate() {
 
   }
 
-setInterval(setDate, 1000);
-setDate();
-
-
-
-
-
-
+  setInterval(setDate, 1000);
+  setDate();
