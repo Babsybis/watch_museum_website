@@ -844,10 +844,10 @@ td{
     }
 
     .element {
-        padding:  9.375rem 8.125rem ;
+        height: 31vh;
         animation: backgrounds 10s infinite;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         }
         
         @keyframes backgrounds {
@@ -1005,10 +1005,10 @@ td{
     }
 
     .element {
-        padding: 40vh;
+        height: 60vh;
         animation: backgrounds 10s infinite;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 100%;
         }
         
         @keyframes backgrounds {
