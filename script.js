@@ -34,6 +34,7 @@ document.body.onload = function (){
     container=document.getElementById("container");
     g=document.getElementById("g");
     d=document.getElementById("d");
+   
 
     container.style.width=(40*nbr)+"vh";
 
@@ -43,10 +44,16 @@ let i=1
          if (i==4){i=4}else{i=i+1}
          //POUR LA TRANSITION IMAGES
          document.querySelector('.photo').classList.add('show');
+         document.querySelector('.titre').classList.add('transition2');
+         document.querySelector('.paraph').classList.add('transition2');
+         document.querySelector('.lien').classList.add('transition2');
+      
          setTimeout(() => {
           document.querySelector('.photo').classList.remove('show');
-        }, 1000)
-        // console.log(i)
+          document.querySelector('.titre').classList.remove('transition2');
+          document.querySelector('.paraph').classList.remove('transition2');
+          document.querySelector('.lien').classList.remove('transition2');
+        }, 1500)
         document.querySelector(".photo").style.backgroundImage=`url("images/img`+i+`.png")`;
         document.querySelector("#pagecontent h2").textContent=images[i-1].name;
         document.querySelector("#pagecontent p").textContent=images[i-1].author;
@@ -60,9 +67,15 @@ let i=1
             if (i==1){i=1}else{i=i-1}
           //POUR LA TRANSITION IMAGES
           document.querySelector('.photo').classList.add('show');
+          document.querySelector('.titre').classList.add('transition2');
+          document.querySelector('.paraph').classList.add('transition2');
+          document.querySelector('.lien').classList.add('transition2');
           setTimeout(() => {
           document.querySelector('.photo').classList.remove('show');
-          }, 1000)
+          document.querySelector('.titre').classList.remove('transition2');
+          document.querySelector('.paraph').classList.remove('transition2');
+          document.querySelector('.lien').classList.remove('transition2');
+          }, 1500)
         
             console.log(i)
             document.querySelector(".photo").style.backgroundImage=`url("images/img`+i+`.png")`;
