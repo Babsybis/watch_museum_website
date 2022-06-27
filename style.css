@@ -135,7 +135,7 @@ li a:hover{
 
 /* ********************MUSEUM************************** */
 .museum{
-    background-image: url(images/musee.jpg);
+    background-image: url(images/musee.webp);
     background-attachment: fixed;
     background-size: cover;
     height: calc(100vh - 100px);
@@ -146,20 +146,28 @@ li a:hover{
 }
 
 h1{
-    color: rgb(239, 239, 239);
-    text-shadow: 1px 1px 2px pink;
     font-family: 'Overlock', cursive;
     font-size: 6.25rem;
-    margin: 0;
     text-align: right;
-    padding-right: 6.25rem;
-    padding-bottom: 4.6875rem;
+    transform: translate(-10%,-10%);
+    color: #ffffff;
+    background: linear-gradient(to right, #4d4d4d 0, white 10%, #6b8a70 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+      
 /* **********POUR REMPLIR LES LETTRES EN OR************* */
     /* background-clip: text;
     background-image: url(images/or.jpg);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    */
 }
+
+@keyframes shine{
+    0% {background-position:0}
+    100%{background-position: 470px}
+  }
 
 /* **********************SECTION DIAPO********************** */
 #pagecontent{
@@ -191,7 +199,7 @@ h1{
 }
 
 .photo{
-    background-image: url(images/img1.png);
+    background-image: url(images/img1.webp);
     background-repeat: space;
     background-position: left;
     background-size: contain;
@@ -553,7 +561,9 @@ h1{
 }
 
 .visite{
-   background-image: url(images/visite.png);
+   background-image: url(images/visitebc.webp);
+   background-size: cover;
+   
 }
 
 table{
@@ -865,12 +875,12 @@ td{
         }
         
         @keyframes backgrounds {
-        0% { background-image: url(images/visite.jpg);}
-        20% {background-image: url(images/visite2.jpg); }
-        40% {background-image: url(images/visite4.jpg); }
-        60% {background-image: url(images/visite3.jpg); }
-        80% {background-image: url(images/visite5.jpg); }
-        100% { background-image: url(images/visite.jpg);}
+        0% { background-image: url(images/visite.webp);}
+        20% {background-image: url(images/visite2.webp); }
+        40% {background-image: url(images/visite4.webp); }
+        60% {background-image: url(images/visite3.webp); }
+        80% {background-image: url(images/visite5.webp); }
+        100% { background-image: url(images/visite.webp);}
         }
 
     .contain_pm{
@@ -894,9 +904,22 @@ td{
         font-size: 1.25rem;
     }
 
+    .visite{
+        background-image:unset;  
+     }
+
+     table{
+        padding: 0; 
+        margin: auto;
+
+
+    }
+
+  
+
     /*************** FOOTER *************************/
     .background_footer{
-        background-image: url(images/footer.png);
+        background-image: url(images/footer.webp);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right;
@@ -915,7 +938,7 @@ td{
     }
     
     .form_width{
-        padding: .625rem 10rem .625rem 1.25rem;
+        padding: .625rem 3rem .625rem 1.25rem;
     }
 
     }
@@ -1059,7 +1082,7 @@ td{
 
      /*************** FOOTER *************************/
      .background_footer{
-        background-image: url(images/footer.png);
+        background-image: url(images/footer.webp);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right;
