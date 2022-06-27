@@ -146,6 +146,8 @@ li a:hover{
 }
 
 h1{
+    color: rgb(239, 239, 239);
+    text-shadow: 1px 1px 2px pink;
     font-family: 'Overlock', cursive;
     font-size: 6.25rem;
     margin: 0;
@@ -153,15 +155,14 @@ h1{
     padding-right: 6.25rem;
     padding-bottom: 4.6875rem;
 /* **********POUR REMPLIR LES LETTRES EN OR************* */
-    background-clip: text;
+    /* background-clip: text;
     background-image: url(images/or.jpg);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;   
+    -webkit-text-fill-color: transparent;    */
 }
 
 /* **********************SECTION DIAPO********************** */
 #pagecontent{
-    background-color: black;
     background: linear-gradient(to right, rgb(16, 16, 16), rgb(0, 0, 0));
     margin: 1%;
     padding: 2% 1%;
@@ -169,6 +170,7 @@ h1{
     grid-template-columns: 4% 35% 4% 1% 54%;
     border-radius: .625rem;
     align-items: center;
+    min-height: 55vh;
 }
 
 .carrousel{
@@ -196,16 +198,27 @@ h1{
     max-width: 30vw;
 }
 
+@keyframes text {
+    0%    { opacity: 0; }
+    100%  { opacity: 1 }
+  }
+
 @keyframes slidein {
     0%    { opacity: 0; }
-    20%   { opacity: .3; }
-    80%   { opacity: .6; }
-    100%  { opacity: .9 }
+    20%   { opacity: .2; }
+    80%   { opacity: .8; }
+    100%  { opacity: 1.2 }
   }
 
   .show{
-    animation: slidein 1.01s linear infinite;
+    animation: slidein 1.51s linear infinite;
   }
+
+
+.transition2 {
+    animation: text 1.51s linear ;
+
+}
 
 
 #pagecontent h2 {
@@ -215,7 +228,7 @@ h1{
     text-transform: capitalize;
     grid-area: 1 / 5 / 2 / 6;
     display: flex;
-    align-items: center;
+    align-items: center;     
 }
 
 #pagecontent p{
