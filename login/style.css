@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.contain{
+    background-color: #f3f3f3;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 30% 70%;
+    grid-column-gap: 10%;
+    grid-row-gap: 0px; 
+}
+
+.title{
+    text-align: center;
+    font-size: 6.25rem;
+    font-family: 'Lato';
+    grid-area: 1 / 1 / 2 / 3;
+    font-weight: 300;
+}
+
+.roue{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+form{
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+label{
+    display: block;
+    margin: 3% 0;
+}
+
+.right{
+    font-family: 'Lato';
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 15%;
+}
+
+#name{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 3rem;    
+    box-sizing: border-box;
+    border-radius: .625rem;
+    border: none;
+}
+
+#pass{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 3rem;    
+    box-sizing: border-box;
+    border-radius: .625rem;
+    border: none;
+}
+
+.btn{
+    grid-area: 2 / 2 / 3 / 3;    
+}
+
+.btn input{
+    padding: 3% 15%; 
+    background-color: #fff;
+    border-radius: .625rem;
+    border: none;
+    box-shadow: 10px 5px 5px #DCDCDC;
+    margin: 10% 0;
+    cursor: pointer;
+}
+
+.btn input:hover{
+    background-color: #000;
+    color: #fff;
+}
