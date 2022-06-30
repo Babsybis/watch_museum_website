@@ -15,6 +15,7 @@ body{
     grid-template-rows: 30% 70%;
     grid-column-gap: 10%;
     grid-row-gap: 0px; 
+    position: relative;
 }
 
 .title{
@@ -25,8 +26,37 @@ body{
     font-weight: 300;
 }
 
+@keyframes spin {
+    100%{transform: rotate(360deg);}
+    }
+    
+    
+    @keyframes spin2 {
+    100%{transform: rotate(-360deg);}
+    }
+
 .roue{
     grid-area: 2 / 1 / 3 / 2;
+    position: absolute;
+}
+
+#une{
+    position: absolute;
+    width: 50%;
+    animation: spin 10s linear infinite;
+}
+#deux{
+    position: absolute;
+    width: 40%;
+    top: 30%;
+    left: 25%;
+    animation: spin2 10s linear infinite;
+}
+
+#trois{
+    position: absolute;
+    left: 30%;
+    animation: spin 10s linear infinite;
 }
 
 form{
@@ -42,7 +72,7 @@ label{
     font-family: 'Lato';
     font-size: 3rem;
     font-weight: 400;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 #name{
@@ -70,7 +100,7 @@ label{
 }
 
 .btn input{
-    padding: 3% 15%; 
+    padding: 2% 15%; 
     background-color: #fff;
     border-radius: .625rem;
     border: none;
