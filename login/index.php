@@ -10,7 +10,8 @@
 <body>
     <div class="contain">
         <div class="title">
-            <p>Sign up</p></div>
+            <p>Sign in</p></div>
+            <!-- **********ROUAGE UNIQUEMENT DESKTOP********** -->
             <img class="roue"src="/watch_museum_website/images/roue.webp" alt="Roue engrenage" width="" height="" id="une">
             <img class="roue"src="/watch_museum_website/images/roue.webp" alt="Roue engrenage" width="" height="" id="deux">
             <img class="roue"src="/watch_museum_website/images/roue2.webp" alt="Roue engrenage" width="" height="" id="trois"> 
