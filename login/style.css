@@ -31,9 +31,10 @@ body{
     }
     
     
-    @keyframes spin2 {
+@keyframes spin2 {
     100%{transform: rotate(-360deg);}
     }
+
 
 .roue{
     grid-area: 2 / 1 / 3 / 2;
@@ -41,38 +42,30 @@ body{
 }
 
 #une{
-    position: absolute;
     width: 50%;
     animation: spin 10s linear infinite;
 }
 #deux{
-    position: absolute;
     width: 40%;
     top: 30%;
     left: 25%;
     animation: spin2 10s linear infinite;
 }
-
 #trois{
-    position: absolute;
     left: 30%;
     animation: spin 10s linear infinite;
+    
 }
 
 form{
     grid-area: 2 / 2 / 3 / 3;
 }
 
-label{
-    display: block;
-    margin: 3% 0;
-}
-
 .right{
     font-family: 'Lato';
     font-size: 3rem;
     font-weight: 400;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 #name{
@@ -83,6 +76,7 @@ label{
     box-sizing: border-box;
     border-radius: .625rem;
     border: none;
+    margin-bottom: 3%;
 }
 
 #pass{
@@ -100,16 +94,88 @@ label{
 }
 
 .btn input{
-    padding: 2% 15%; 
+    width: 50%; 
+    height: 3rem;
     background-color: #fff;
     border-radius: .625rem;
     border: none;
     box-shadow: 10px 5px 5px #DCDCDC;
-    margin: 10% 0;
     cursor: pointer;
+    font-size: 1.5625rem;
+    margin: 10% 0;
 }
 
 .btn input:hover{
     background-color: #000;
     color: #fff;
+}
+
+@media screen and (max-width: 500px){
+.contain{
+    grid-template-columns: 1fr;
+    grid-column-gap: 0%;
+    grid-row-gap: 0%;
+}
+
+form>div{    
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#name, #pass{
+    width:unset;
+}
+
+.title{
+    font-size: 5rem;
+}
+
+form{
+    grid-area: 2 / 1 / 3 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right{
+    font-family: 'Lato';
+    font-size: 2rem;
+    font-weight: 400;
+
+}
+
+.btn input{
+    font-size: 1.25rem;
+    margin: 20% auto;
+}
+
+.roue{
+    grid-area: 2/1/3/4;
+    position: absolute;
+}
+#une{
+    width: 30%;
+    animation: spin 10s linear infinite;
+    bottom: 10%;
+    left: 30%;
+}
+#deux{
+    position: absolute;
+    width: 20%;
+    top: 75%;
+    left: 50%;
+    animation: spin2 10s linear infinite;
+}
+#trois{
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    left: 55%;
+  
+    animation: spin 10s linear infinite;
+    
+}
 }
