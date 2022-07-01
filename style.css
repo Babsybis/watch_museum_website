@@ -375,9 +375,9 @@ h1{
 
 #trois{
     animation: spin 10s linear infinite;
-    width: 60%;
-    top: 45%;
-    left:40%; 
+    width: 70%;
+    top: 40%;
+    left:35%; 
 
 }
 
@@ -744,6 +744,8 @@ td{
         margin: 0;
         padding-bottom: 18.75rem;
         padding-right: 1.25rem; 
+        text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    
     }
 
      /* *********DIAPO*********** */
@@ -805,9 +807,9 @@ td{
     }
 
     #trois{
-        width: 45%;
-        top: 55%;
-        left: 45%;
+        width: 65%;
+        top: 45%;
+        left: 35%;
     }
 
     /* *************************SECTION CROQUIS****************************** */
@@ -857,10 +859,12 @@ td{
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
         }
+
         
         @keyframes backgrounds {
-        0% { background-image: url(images/visite.webp);}
+        0% { background-image: url(images/visite.webp); }
         20% {background-image: url(images/visite2.webp); }
         40% {background-image: url(images/visite4.webp); }
         60% {background-image: url(images/visite3.webp); }
