@@ -52,7 +52,8 @@ body{
     animation: spin2 10s linear infinite;
 }
 #trois{
-    left: 30%;
+    left: 25%;
+    width: 31.25rem;
     animation: spin 10s linear infinite;
     
 }
@@ -171,9 +172,9 @@ form{
 }
 #trois{
     position: absolute;
-    width: 30%;
-    top: 70%;
-    left: 55%;
+    width: 40%;
+    top: 67%;
+    left: 50%;
   
     animation: spin 10s linear infinite;
     
