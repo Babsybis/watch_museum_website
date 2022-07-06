@@ -199,3 +199,19 @@ function setDate() {
 
   setInterval(setDate, 1000);
   setDate();
+
+
+// ******************************ENVOI MAIL-BDD***************************
+document.getElementById("newsletter").addEventListener('submit', function(e){
+  e.preventDefault()
+    let eMailValue = document.getElementById("eMail").value;
+    let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
+    
+if (emailRegExp.test(eMailValue)){
+  //On envoie le mail vers la bdd
+  let data = new FormData();
+  data.append("eMail", eMailValue);
+  fetch("index.php", { method: "POST", body: data });
+}
+
+})
