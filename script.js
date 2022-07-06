@@ -202,16 +202,30 @@ function setDate() {
 
 
 // ******************************ENVOI MAIL-BDD***************************
+let newSpan = document.createElement('span')
+let div = document.querySelector('#newsletter')
+div.parentElement.append(newSpan)
 document.getElementById("newsletter").addEventListener('submit', function(e){
   e.preventDefault()
     let eMailValue = document.getElementById("eMail").value;
     let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
-    
+
 if (emailRegExp.test(eMailValue)){
   //On envoie le mail vers la bdd
   let data = new FormData();
   data.append("eMail", eMailValue);
   fetch("index.php", { method: "POST", body: data });
+  eMail.classList.remove('invalide')
+  eMail.classList.add('valide')
+  newSpan.textContent = 'Merci pour votre inscription'
+  newSpan.classList.remove('textinvalid')
+  newSpan.classList.add('textvalid')
+  
+}else {
+  eMail.classList.remove('valide')
+  eMail.classList.add('invalide')
+  newSpan.textContent = 'Email invalide, veuillez verifier la saisie de votre email'
+  newSpan.classList.remove('textvalid')
+  newSpan.classList.add('textinvalid')
 }
-
 })
