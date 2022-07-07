@@ -21,9 +21,9 @@ try {
 
     $sth = $conn->prepare("DELETE FROM register_newsletter WHERE id=:id");
     //prepare la commande sql
-    $sth -> bindParam(":id", $_GET['delete'], PDO::PARAM_INT);
+    $sth -> bindParam(":id", $_POST['delete'], PDO::PARAM_INT);
     //definition de la variable
-    $sth -> execute(["id" => $_GET['delete']]);
+    $sth -> execute(["id" => $_POST['delete']]);
     //execute la commande sql
 
 } catch(PDOException $e) {
