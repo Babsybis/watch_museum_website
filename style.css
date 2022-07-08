@@ -660,6 +660,22 @@ td{
 
 }
 
+.valide{
+    border-color: green;
+}
+
+.invalide{
+    border-color: red;
+  
+}
+
+.textinvalid{
+    color: red;
+}
+
+.textvalid{
+    color: green; 
+}
 /* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 47.5rem){
     .navbar .menu_hamburger{
