@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if (!isset($_SESSION["login"])){
+    header("location: /watch_museum_website/login/login.php");
+    exit;
+};
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +16,22 @@
     <title>Document</title>
 </head>
 <body>
+<div class="popup">
+            <div class="confirm">
+                <p>Voulez vous vraiment supprimer cette donnée?</p>
+                <div class="btns">
+                    <button type="btn" class="oui">Oui</button> 
+                    <button type="btn" class="non">Non</button> 
+                </div>
+            </div>
+        </div>
     <div class="container">
-        <!-- **********HEADER************ -->
+          <!-- **********HEADER************ -->
         <div class="header">
             <p class="logo"><span>m</span>usée</p>
             <div class="right">
             <a class="btn" href="www.fitness-morteau.fr">Export CSV</a>
-            <img class="sortie"src="/watch_museum_website/images/logout.webp"alt="Bouton sortie">
+            <a href="logout.php"><img class="sortie"src="/watch_museum_website/images/logout.webp"alt="Bouton sortie"></a>
             </div>
         </div>
         <!-- ***********TABLEAU********** -->
@@ -32,26 +48,24 @@
     </tbody>
 	
         </table>
+        </div>
         <template id="productrow">
         <tr>
             <td></td>
             <td></td>
-            <td><img class="delete" src="/watch_museum_website/images/delete.webp" alt="Poubelle"></td>
+            <td><img class="delete" src="/watch_museum_website/images/delete.webp" alt="Poubelle" ></a></td>
         </tr>
         </template>
-    </div>
+  
+
     <!-- **********FOOTER********** -->
     <div class="footer">
         <div class="next"><img src="/watch_museum_website/images/left.webp"alt="Bouton precedent"></div>
-            <a class="next" href="www.fitness-morteau.fr">1</a>
-            <a class="next" href="www.fitness-morteau.fr">2</a>
-            <a class="next" href="www.fitness-morteau.fr">...</a>
-            <a class="next" href="www.fitness-morteau.fr">""</a>
+            <a class="survol" href="www.fitness-morteau.fr">1</a>
+            <a class="survol" href="www.fitness-morteau.fr">2</a>
+            <a class="survol" href="www.fitness-morteau.fr">...</a>
+            <a class="survol" href="www.fitness-morteau.fr">""</a>
         <div class="next"><img src="/watch_museum_website/images/right.webp"alt="Bouton suivant"></div>
-    </div>
-        
-        
-
-    
+    </div> 
 </body>
 </html>
