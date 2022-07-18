@@ -24,7 +24,7 @@ if (!isset($_SESSION["login"])){
                     <button type="btn" class="non">Non</button> 
                 </div>
             </div>
-        </div>
+</div>
     <div class="container">
           <!-- **********HEADER************ -->
         <div class="header">
@@ -48,7 +48,7 @@ if (!isset($_SESSION["login"])){
     </tbody>
 	
         </table>
-        </div>
+    
         <template id="productrow">
         <tr>
             <td></td>
@@ -60,12 +60,12 @@ if (!isset($_SESSION["login"])){
 
     <!-- **********FOOTER********** -->
     <div class="footer">
-        <div class="next"><img src="/watch_museum_website/images/left.webp"alt="Bouton precedent"></div>
-            <a class="survol" href="www.fitness-morteau.fr">1</a>
-            <a class="survol" href="www.fitness-morteau.fr">2</a>
-            <a class="survol" href="www.fitness-morteau.fr">...</a>
-            <a class="survol" href="www.fitness-morteau.fr">""</a>
-        <div class="next"><img src="/watch_museum_website/images/right.webp"alt="Bouton suivant"></div>
-    </div> 
+        <button class="btn btn_footer">Voir plus</button>
+        <div class="title">
+            <p>Dashboard</p>
+            <p>Newsletter website</p>
+        </div> 
+        </div>
+    </div>
 </body>
 </html>
