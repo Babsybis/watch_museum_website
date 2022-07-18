@@ -9,9 +9,9 @@ define('DATABASE',$_ENV["BDD"]);
 define('USERNAME',$_ENV["USER"]);
 define('PASSWORD', $_ENV["PASSWORD"]);
 //variables environement
-
 $conn = "";
 //initialisation variable
+$a=$_POST["dixdeplus"];
 
 try {
     $conn = new PDO("mysql:host=".SERVER.";dbname=".DATABASE, USERNAME, PASSWORD);
@@ -23,7 +23,7 @@ try {
     $conn->setAttribute(PDO::ATTR_AUTOCOMMIT,FALSE);
   
 
-    $sth = $conn->prepare("SELECT * FROM register_newsletter");
+    $sth = $conn->prepare("SELECT * FROM register_newsletter LIMIT 10 OFFSET ".$a);
     //prepare la commande sql
     $sth->execute();
     //execute la commande sql
