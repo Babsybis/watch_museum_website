@@ -2,8 +2,13 @@
 //Création du tableau
 // On prépare une ligne pour le tableau
 const template = document.querySelector("#productrow");
+//Pour communiquer avec PHP
+let nombre = new FormData();
+nombre.append("dixdeplus", 0),
 
-fetch('getdb.php')
+    fetch("getdb.php", {
+    method: 'POST',
+    body: nombre })
     .then(function(response) {
         return response.json();
     })
@@ -48,7 +53,37 @@ supp.forEach(element =>{
     });
 })
 
-//Au click sur le bouton yes
+//Au click sur le bouton voir plus
+const show_more = document.querySelector('.btn_footer');
+console.log(show_more);
+let caca=0;
+show_more.addEventListener('click', function (){
+    caca=caca+10;
+    let data = new FormData();
+    data.append("dixdeplus", caca),
+
+    fetch("getdb.php", {
+        method: 'POST',
+        body: data })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(myJson){
+        myJson.forEach(element => {
+            // On clone la ligne et on l'insère dans le tableau
+            let tbody = document.querySelector("tbody");
+            let clone = document.importNode(template.content, true);
+            let td = clone.querySelectorAll("td");
+            td[0].textContent = element["mail"];
+            td[1].textContent = element["date_location"];
+            td[2].setAttribute("data-value", element['id'])
+
+
+            tbody.appendChild(clone);   
+        });
+    })
+})
+
 
 
 
