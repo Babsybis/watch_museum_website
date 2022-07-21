@@ -51,6 +51,7 @@ body{
     padding: .625rem .9375rem;
     font-weight: 600;
     font-family: 'Lato';
+    border: none;
 }
 
 .btn:hover{
