@@ -30,7 +30,7 @@ if (!isset($_SESSION["login"])){
         <div class="header">
             <p class="logo"><span>m</span>usée</p>
             <div class="right">
-            <a class="btn" href="www.fitness-morteau.fr">Export CSV</a>
+            <a class="btn" href="csv.php">Export CSV</a>
             <a href="logout.php"><img class="sortie"src="/watch_museum_website/images/logout.webp"alt="Bouton sortie"></a>
             </div>
         </div>
