@@ -23,7 +23,7 @@ try {
     $conn->setAttribute(PDO::ATTR_AUTOCOMMIT,FALSE);
   
 
-    $sth = $conn->prepare("SELECT * FROM register_newsletter LIMIT 10 OFFSET ".$a);
+    $sth = $conn->prepare("SELECT * FROM register_newsletter ORDER BY Mail LIMIT 10 OFFSET ".$a);
     //prepare la commande sql
     $sth->execute();
     //execute la commande sql
