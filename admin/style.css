@@ -39,6 +39,11 @@ body{
 
 .right{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:50px
+
+
 }
 
 .btn{
@@ -60,13 +65,19 @@ body{
 }
 
 .sortie{
-    padding-left: 4.6875rem;
     padding-right: 3.125rem ;
 }
 
 .sortie:hover{
     cursor: pointer;
     opacity: .5;
+}
+/* **********BARRE DE RECHERCHE*********** */
+.search{
+    border-radius: .5rem;
+    border: solid .0625rem #9E9E9E;
+    padding-left: .625rem;
+    height: 1.875rem;
 }
 
 /* **********TABLEAU********** */
