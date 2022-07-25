@@ -100,6 +100,7 @@ body{
     visibility: visible;
     transition-duration: 2s;
 }
+
 .confirm{
     background-color: #000;
     height: 15.625rem;
@@ -183,9 +184,14 @@ tr:nth-child(even){
 }
 
 .btn_footer{
+    display: none;
     height: 100%;
     border: none;
     cursor: pointer;
+}
+
+.displayvisible{
+    display: unset;
 }
 
 .survol:hover{
