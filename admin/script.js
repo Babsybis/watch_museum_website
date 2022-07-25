@@ -19,6 +19,7 @@ function rows(myJson) {
 
         tbody.appendChild(clone);   
     });
+
 //Au click sur la poubelle
 let supp = document.querySelectorAll('.delete')
 let yesNo = document.querySelector('.popup')
@@ -73,11 +74,63 @@ show_more.addEventListener('click', function (){
         return response.json();
     })
     .then(function(myJson) {
+        if (myJson.length <10 ){
+            show_more.classList.remove('displayvisible');
+        
+        }else{
+            show_more.classList.add('displayvisible')
+        }
         rows(myJson)
     })
 })
-        
-    
+
+
+//Ecoute des lettres dans la barre de recherche
+const inputSearch = document.querySelector('.search');
+
+inputSearch.addEventListener('keyup', function(e){
+    if (this.value == ""){
+        show_more.classList.add('displayvisible')
+    }else{
+        show_more.classList.remove('displayvisible')
+    }
+    if(this.value != ""){
+
+
+    if (e.key != "Enter"){
+    let tbody = document.querySelector("tbody");
+    tbody.querySelectorAll('tr').forEach(element => {
+        element.remove()
+    });
+    //simulation du formulaire
+    let serach_form = new FormData();
+    serach_form.append("entries", this.value),
+
+        fetch("search.php", {
+        method: 'POST',
+        body: serach_form })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+
+            rows(myJson)
+        })
+    }
+}
+    })
+
+    //Rendre le bouton voir plus invisible si moins de 10 données dans la bdd
+    fetch('showmorevisible.php', {
+    }).then(function (response) {
+        return response.json();
+        }).then(function (json) {
+        console.log(json)
+        if (json.length > 10) {
+            show_more.classList.add('displayvisible');
+        }
+    })
+
 
 
 
