@@ -147,7 +147,19 @@ border-spacing: 0;
 
 .first{
     text-align: left;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.35);   
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.35); 
+}
+
+.first th:nth-child(1){
+    width: 50%;
+}
+
+.first th:nth-child(2){
+    width: 35%;
+}
+
+.first th:nth-child(3){
+    width: 15%;
 }
 
 th{
@@ -206,6 +218,7 @@ tr:nth-child(even){
     font-style: italic;
     
 }
+
 .title p:first-child{
     font-size: 3rem;
     margin: 0;
@@ -218,4 +231,9 @@ tr:nth-child(even){
     margin: 0;
 
 
+}
+
+.counts{
+    font-weight: 600;
+    font-size: 1rem;
 }
