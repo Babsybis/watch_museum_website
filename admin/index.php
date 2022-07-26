@@ -39,16 +39,16 @@ if (!isset($_SESSION["login"])){
    
         <!-- ***********TABLEAU********** -->
         <table>
-	<thead>
-		<tr class="first">
-			<th>MAIL</th>
-			<th>DATE</th>
-			<th>DELETE</th>
-		</tr>
-	</thead>
-    <tbody>
+            <thead>
+                <tr class="first">
+                    <th>MAIL</th>
+                    <th>DATE</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+            <tbody>
 
-    </tbody>
+            </tbody>
 	
         </table>
     
@@ -64,6 +64,8 @@ if (!isset($_SESSION["login"])){
     <!-- **********FOOTER********** -->
     <div class="footer">
         <button class="btn btn_footer">Voir plus</button>
+        
+        <p><span class="cpt">0</span>/<span class="cpt_total">0</span></p>
         <div class="title">
             <p>Dashboard</p>
             <p>Newsletter website</p>
