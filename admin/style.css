@@ -5,11 +5,11 @@
 
 body{
     margin: 0;
+    background-color: #f3f3f3;
 }
 
 .container{
     padding: 0 5%;
-    background-color: #f3f3f3;
 }
 
 /* **********HEADER********** */
@@ -72,12 +72,19 @@ body{
     cursor: pointer;
     opacity: .5;
 }
+
+.sortie2{
+    display: none;
+}
 /* **********BARRE DE RECHERCHE*********** */
 .search{
     border-radius: .5rem;
     border: solid .0625rem #9E9E9E;
     padding-left: .625rem;
     height: 1.875rem;
+    font-family: 'Lato';
+    width: 12.5rem;
+    margin-bottom: 3.125rem;
 }
 
 /* **********TABLEAU********** */
@@ -186,6 +193,10 @@ tr:nth-child(even){
     opacity: .8;
 }
 
+tbody tr{
+
+}   
+
 
 
 /* **********FOOTER*********** */
@@ -193,6 +204,7 @@ tr:nth-child(even){
     margin-top: 3.125rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .btn_footer{
@@ -216,6 +228,7 @@ tr:nth-child(even){
     flex-direction: column;
     font-family: 'STIX Two Text', serif;
     font-style: italic;
+    padding-left: 10%;
     
 }
 
@@ -235,5 +248,79 @@ tr:nth-child(even){
 
 .counts{
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding-right: 3.125rem;
+}
+
+@media screen and (max-width: 800px){
+    .first th:nth-child(2) {
+        display: none; 
+    }
+
+    td:nth-child(2) {
+        display: none; 
+    }
+    
+}
+
+@media screen and (max-width: 580px){
+    .right{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .sortie{
+        padding: unset;
+    }
+
+    .title{
+        display: none;
+    }
+
+    .search{
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo{
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search{
+        width: 20rem;
+        margin: .625rem;
+    }
+
+    .right{
+        flex-direction: row;
+        padding-bottom: 10%;
+    }
+
+    .sortie{
+        display: none;
+    }
+
+    .sortie2{
+        display: block;
+    }
+
+    .left_media{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2%;
+    }
+    .right{
+        flex-direction: unset;
+        gap: unset;
+    }
 }
