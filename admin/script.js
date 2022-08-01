@@ -1,13 +1,15 @@
-//Création du tableau
-// On prépare une ligne pour le tableau
-const template = document.querySelector("#productrow");
 //Pour communiquer avec PHP
 let nombre = new FormData();
 nombre.append("dixdeplus", 0);
 
+//Création du tableau On prépare une ligne pour le tableau
+const template = document.querySelector("#productrow");
+
+
 //variables
 const cpt_total = document.querySelector('.cpt_total')
 const cpt = document.querySelector('.cpt')
+
 
 //Fonction creation et supression ligne du tableau
 function rows(myJson) {
@@ -23,6 +25,20 @@ function rows(myJson) {
 
         tbody.appendChild(clone);   
     });
+    
+
+//compteur total de données bdd
+fetch("count.php", {
+    method: 'POST',
+    })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(myJson) {
+        cpt_total.textContent = myJson[0][0]
+    })
+
+
 
 //Au click sur la poubelle
 let supp = document.querySelectorAll('.delete')
@@ -71,6 +87,8 @@ element.addEventListener('click', function (){
         rows(myJson)
     })
 
+
+
 //Au click sur le bouton voir plus
 const show_more = document.querySelector('.btn_footer');
 show_more.addEventListener('click', function (){
@@ -104,6 +122,9 @@ const inputSearch = document.querySelector('.search');
 
 inputSearch.addEventListener('keyup', function(e){
     if (this.value == ""){
+        if (e.key != "Enter" && e.key != "AltGraph" && e.key != "Control" && e.key != ""){
+
+      
         let tbody = document.querySelector("tbody");
         tbody.querySelectorAll('tr').forEach(element => {
             element.remove()
@@ -116,15 +137,26 @@ inputSearch.addEventListener('keyup', function(e){
                 return response.json();
             })
             .then(function(myJson) {
+                length = myJson.length
+                cpt.textContent = length
                 rows(myJson)
             })
+               fetch("count.php", {
+        method: 'POST',
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+            cpt_total.textContent = myJson[0][0]
+        })
         return false;
-
+    }
     }else{
         show_more.classList.remove('displayvisible')
     }
 
-    if (e.key != "Enter" && e.key != "altGraph" && e.key != "Control" && e.key != ""){
+    if (e.key != "Enter" && e.key != "AltGraph" && e.key != "Control" && e.key != ""){
     let tbody = document.querySelector("tbody");
     tbody.querySelectorAll('tr').forEach(element => {
         element.remove()
@@ -141,14 +173,24 @@ inputSearch.addEventListener('keyup', function(e){
         })
         .then(function(myJson) {
             cpt.textContent = myJson.length
-            cpt_total.textContent = myJson.length
             rows(myJson)
         })
+        fetch("count.php", {
+            method: 'POST',
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(myJson) {
+                cpt_total.textContent = myJson[0][0]
+            })
+    
     }
 }
 )
 
-    //Rendre le bouton voir plus invisible si moins de 10 données dans la bdd
+
+//Rendre le bouton voir plus invisible si moins de 10 données dans la bdd
     fetch('showmorevisible.php', {
     }).then(function (response) {
         return response.json();
@@ -159,16 +201,29 @@ inputSearch.addEventListener('keyup', function(e){
         }
     })
 
-    //compteur total de données bdd
-    fetch("count.php", {
-        method: 'POST',
-        })
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(myJson) {
-            cpt_total.textContent = myJson[0][0]
-        })
+
+
+
+
+// tri a bulles
+// fetch("getdb.php", {
+//     method: 'POST',
+//     body: nombre })
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     .then(function(myJson) {
+//         let triaBul = myJson[0]["mail"];
+//         function bblSort(arr){
+//         for(var i = 0; i < triaBul; i++){
+//             // Last i elements are already in place  
+//    for(var j = 0; j < ( triaBul - i -1 ); j++){
+//         // Checking if the item at present iteration 
+//      // is greater than the next iteration
+//      if(arr[j] > arr[j+1]){
+      
+//     })
+
 
    
         
