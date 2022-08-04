@@ -162,12 +162,12 @@ inputSearch.addEventListener('keyup', function(e){
         element.remove()
     });
     //simulation du formulaire
-    let serach_form = new FormData();
-    serach_form.append("entries", this.value),
+    let search_form = new FormData();
+    search_form.append("entries", this.value),
 
         fetch("search.php", {
         method: 'POST',
-        body: serach_form })
+        body: search_form })
         .then(function(response) {
             return response.json();
         })
@@ -206,23 +206,93 @@ inputSearch.addEventListener('keyup', function(e){
 
 
 // tri a bulles
-// fetch("getdb.php", {
-//     method: 'POST',
-//     body: nombre })
-//     .then(function(response) {
-//         return response.json();
-//     })
-//     .then(function(myJson) {
-//         let triaBul = myJson[0]["mail"];
-//         function bblSort(arr){
-//         for(var i = 0; i < triaBul; i++){
-//             // Last i elements are already in place  
-//    for(var j = 0; j < ( triaBul - i -1 ); j++){
-//         // Checking if the item at present iteration 
-//      // is greater than the next iteration
-//      if(arr[j] > arr[j+1]){
-      
-//     })
+
+
+// Mise en œuvre du tri à bulles à l'aide de Javascript
+
+function bblSort(arr){
+ 
+     for(var i = 0; i < arr.length; i++){
+ 
+         // Les derniers éléments i sont déjà en place
+         for(var j = 0; j < ( arr.length - i -1 ); j++){
+             // Vérifier si l'élément à l'itération actuelle
+             // est supérieur à la prochaine itération
+             if(arr[j][1] > arr[j+1][1]){
+ 
+                 // Si la condition est vraie, échangez-les
+                 var temp = arr[j]
+                 arr[j] = arr[j + 1]
+                 arr[j+1] = temp
+
+             }
+         }
+     }
+
+     // Imprimer le tableau trié
+     return(arr);
+ }
+
+ function bblSort2(arr){
+ 
+    for(var i = 0; i < arr.length; i++){
+
+        // Les derniers éléments i sont déjà en place
+        for(var j = 0; j < ( arr.length - i -1 ); j++){
+            // Vérifier si l'élément à l'itération actuelle
+            // est supérieur à la prochaine itération
+            if(arr[j][1] < arr[j+1][1]){
+
+                // Si la condition est vraie, échangez-les
+                var temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j+1] = temp
+
+            }
+        }
+    }
+
+    // Imprimer le tableau trié
+    return(arr);
+}
+
+
+let instance = true;
+const tri = document.querySelector(".tri");
+const tri_date = document.querySelector(".tri_date");
+let mailArray = [];
+tri.addEventListener("click" , function(e) {
+let trList = document.querySelector('tbody').children;
+
+            for (let element of trList){
+            mailArray.push([element, element.children[0].textContent.toLowerCase()])
+            };
+
+            console.log(mailArray)
+            
+            if(!instance){
+            bblSort(mailArray)
+            tri.style.transform = 'rotate(360deg)';
+            instance = true;
+            }
+            else if(instance){
+            bblSort2(mailArray);
+            tri.style.transform = 'rotate(180deg)';
+            instance = false;
+            }
+
+            let tbody = document.querySelector("tbody");
+            mailArray.forEach(element => {
+            tbody.append(element[0]);
+             })
+     
+           
+             mailArray = [];
+         })
+             
+ 
+
+ 
 
 
    
