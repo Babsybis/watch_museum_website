@@ -676,6 +676,9 @@ td{
 .textvalid{
     color: green; 
 }
+
+
+
 /* ****************RESPONSIVE************************* */
 @media screen  and (max-width: 47.5rem){
     .navbar .menu_hamburger{
@@ -696,7 +699,7 @@ td{
 
     .nav_links {
         position: absolute;
-        background-color: hsla(0, 0%, 100%, 0.5); /*a modifier*/
+        background-color: hsla(0, 0%, 57%, 0.5); /*a modifier*/
         backdrop-filter: blur(.4375rem); /*ne fonctionne pas sur firefox*/
         width: 100%;
         top: 4.375rem;
@@ -756,7 +759,7 @@ td{
     }
     
     h1{
-        font-size: 3.125rem;
+        font-size: 3rem;
         margin: 0;
         padding-bottom: 18.75rem;
         padding-right: 1.25rem; 
@@ -774,7 +777,7 @@ td{
 
      #pagecontent h2 {
         grid-area: 1 / 1 / 2 / 6;
-        font-size: 1.5625rem;
+        font-size: 1.4rem;
         
     }
     
@@ -830,7 +833,7 @@ td{
 
     /* *************************SECTION CROQUIS****************************** */
     .contain {
-        height: 80vh;
+        height: 90vh;
         padding-top: 1rem;
         padding-bottom: unset;
         margin: 2% 1%;
@@ -915,7 +918,7 @@ td{
 
      table{
         padding: 0; 
-        margin: auto;
+        margin: -1%;
 
 
     }
@@ -943,7 +946,7 @@ td{
     }
     
     .form_width{
-        padding: .625rem 3rem .625rem 1.25rem;
+        padding: .625rem 4rem .625rem 1.25rem;
     }
 
     }
